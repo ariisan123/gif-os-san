@@ -1,0 +1,27 @@
+$primary-theme-gradient:  linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+$secondary-theme-gradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+$font: 'Chakra Petch', sans-serif;
+
+// Mixins
+
+@mixin dis_flex($wrap: nowrap, $f_dir: row, $justify: center, $align: center){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $f_dir;
+    flex-wrap: $wrap;
+}
+
+@mixin buttons($pad-tb:0, $pad-lr: 0,$f-size: 16px) {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    font-family: $font;
+    font-size: $f-size;
+    font-weight: 500;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    padding: $pad-tb $pad-lr;
+}
