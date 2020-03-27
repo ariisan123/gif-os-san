@@ -204,4 +204,99 @@
   color: #9C8DAB;
 }
 
+.search-main {
+  margin-left: 6.9%;
+  margin-right: 9.7%;
+  margin-top: 3.3%;
+  padding: 3px;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+.search-main > h3 {
+  padding-left: 3px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+.search-container {
+  position: relative;
+  margin: 12px 0;
+  margin-left: 15px;
+  margin-right: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.search-container > input {
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  width: 100%;
+  padding: 13px 0;
+  padding-left: 16px;
+  margin-right: 8px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  font-weight: 500;
+}
+.search-container > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: unset;
+  line-height: 18px;
+  padding: 9px 0;
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  position: relative;
+  padding-right: 14px;
+  padding-left: 36px;
+  background-image: url("../assets/lupa.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.search-container > button:hover {
+  background-color: #E6BBE2;
+}
+.search-container > button::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  outline: 1px solid #F7C9F3;
+}
+.search-container > button:hover::before {
+  outline: 1px dotted #110038;
+}
+.search-container > button:disabled {
+  color: #B4B4B4;
+  background: #E6E6E6;
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  background-image: url("../assets/lupa_inactive.svg");
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
 /*# sourceMappingURL=styles.css.map */

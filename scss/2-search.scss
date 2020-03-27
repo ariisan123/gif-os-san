@@ -1,0 +1,83 @@
+.search-main{
+    margin-left: 6.9%;
+    margin-right: 9.7%;
+    margin-top: 3.3%;
+    padding: 3px;
+    @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+
+    >h3{
+        padding-left: 3px;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 600;
+        color: $c-white;
+        letter-spacing: 0;
+        background-image: $pt-gradient;
+    }
+
+}
+
+.search-container{
+    position: relative;
+    margin: 12px 0;
+    margin-left: 15px;
+    margin-right: 18px;
+    @include dis_flex;
+
+    > input{
+        @include bg_bder_shadow($c-white, $c-gray-3, $c-gray-6, $c-black, -2px, 2px);
+        width: 100%;
+        padding: 13px 0;
+        padding-left: 16px;
+        margin-right: 8px;
+
+        font-family: $font;
+        font-size: 16px;
+        color: $c-font;
+        letter-spacing: 0;
+        line-height: 22px;
+        font-weight: 500;
+    }
+
+    >button{
+        @include dis_flex;
+        @include buttons(9px, 0, 16px, 18px, unset);
+        @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+        position: relative;
+        padding-right: 14px;
+        padding-left: 36px;
+        background-image: url('../assets/lupa.svg');
+        background-repeat: no-repeat;
+        background-position: 10px;
+        cursor: pointer;
+        transition: background-color .2s ease;
+
+        &:hover{
+            background-color: $c-pink-3;
+        }
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            outline: 1px solid $c-pink-4;
+        }
+
+        &:hover::before{
+            outline: 1px dotted $c-font;
+        }
+
+        &:disabled{
+            color: $c-gray-4;
+            @include bg_bder_shadow($c-gray-6, $c-gray-1, $c-gray-4, $c-white);
+            background-image: url('../assets/lupa_inactive.svg');
+            background-repeat: no-repeat;
+            background-position: 10px;
+        }
+
+    }
+
+}

@@ -39,10 +39,10 @@ $secondary-theme-gradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
 
 // Mixins
 
-@mixin bg_bder_shadow($background, $border, $f-shadow, $s-shadow){
+@mixin bg_bder_shadow($background, $border, $f-shadow, $s-shadow, $px: -1px, $px2: 1px){
     background: $background;
     border: 1px solid $border;
-    box-shadow: inset -1px -1px 0 0 $f-shadow, inset 1px 1px 0 0 $s-shadow;
+    box-shadow: inset $px $px 0 0 $f-shadow, inset $px2 $px2 0 0 $s-shadow;
 }
 
 @mixin bg_shadow($background, $f-shadow, $s-shadow){
