@@ -1,10 +1,10 @@
 .h-title{
-    background-image: $primary-theme-gradient;
-    box-shadow: 0 1px 0 0 #110038;
+    background-image: $pt-gradient;
+    box-shadow: 0 1px 0 0 $c-font;
     font-family: $font;
     font-weight: 400;
     font-size: 12px;
-    color: white;
+    color: $c-white;
     letter-spacing: 0;
 }
 
@@ -24,12 +24,32 @@
 
     .navbar-div{
         @include dis_flex;
-        list-style-type: none;
 
         .new-gifos{
-            @include buttons(9px,26.5px);
+            @include buttons(4px,4.5px);
+            @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
             text-decoration: none;
             margin-right: 16px;
+            position: relative;
+            transition: background .2s ease;
+            cursor: pointer;
+
+            > a{
+                text-decoration: none;
+                color: $c-font;
+                padding: 5px 24px;
+                outline: 1px solid $c-pink-4;
+                display: flex;
+            }
+
+            &:hover{
+                background-color: $c-pink-3;
+            }
+
+            &:hover >a{
+                outline: 1px dotted $c-font;
+            }
+
         }
 
         .theme-changer{
@@ -38,47 +58,65 @@
             margin-right: 16.5px;
            
             .drop-menu{
-                @include buttons(9px, 24px);
-                text-decoration: none;
+                position: relative;
+                @include buttons(4px, 4px);
+                @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+                cursor: pointer;
                 z-index: 3;
+                transition: background .2s ease;
+
+                > a{
+                    display: flex;
+                    text-decoration: none;
+                    color: $c-font;
+                    padding: 5px 24px;
+                    outline: 1px solid $c-pink-4;
+                }
+            
             }
     
             .drop-arrow{
-                padding: 15px 13px;
-                background: #F7C9F3;
-                border: 1px solid #110038;
-                box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+                padding: 4px 4px;
                 z-index: 3;
+                cursor: pointer;
+                position: relative;
+                display: flex;
+                transition: background .2s ease;
+            
+                >img{
+                    padding: 11px 9px;
+                    outline: 1px solid $c-pink-4;
+                }
+
             }
-        }
+
+            &:hover .drop-menu, &:hover .drop-arrow{
+                background-color: $c-pink-3;
+            }
+
+            &:hover .drop-menu > a, &:hover .drop-arrow > img{
+                outline: 1px dotted $c-font;
+            }
         
+        }
         
         .theme-select{
             @include dis_flex($f_dir: column, $align: stretch);
+            @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
             position: absolute;
-            background: #E6E6E6;
-            box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
             top: 15px;
             width: 100%;
             visibility: hidden;
             transition: top .1s ease;
             
             span{
+                @include buttons($l-height:22px, $pad-tb:7px,$t-align:unset);
+                @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
                 position: relative;
-                font-family: $font;
-                font-weight: 500;
-                font-size: 16px;
-                color: #110038;
-                padding: 7px 0;
                 padding-left: 16px;
-                letter-spacing: 0;
-                line-height: 22px;
-                background: #F0F0F0;
-                border: 1px solid #808080;
-                box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
                 margin: 10px;
                 cursor: pointer;
-                display: block;
                 
                 &:last-child{
                     margin-top: 0;
@@ -89,7 +127,7 @@
                     position: absolute;
                     width: 8px;
                     height: 1px;
-                    background-color: #110038;
+                    background-color: $c-font;
                     bottom: 10px;
                     left: 10px;
                     visibility: hidden;
@@ -102,22 +140,16 @@
                 }
 
                 &:active, &:hover{
-                    background: #FFF4FD;
-                    border: 1px solid #CCA6C9;
-                    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+                    @include bg_bder_shadow($c-gray-9, $c-pink-2, $c-gray-7, c-white);
                 }
             }
         }
 
         .my-gifos{
+            @include buttons(7px, $t-align:unset);
             position: relative;
-            font-family: $font;
-            font-size: 16px;
-            color: #110038;
-            letter-spacing: 0;
-            line-height: 18px;
+            
             text-decoration: none;
-            padding: 7px 0;
             padding-right: 20px;
 
             &::before{
@@ -125,13 +157,13 @@
                 position: absolute;
                 width: 8px;
                 height: 1px;
-                background-color:  #110038;
+                background-color:  $c-font;
                 bottom: 7px;
                 left: 1px;
             }
 
             &:hover{
-                border: 1px dotted #110038;
+                outline: 1px dotted $c-font;
             }
 
             &:active::before{

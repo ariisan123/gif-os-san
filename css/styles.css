@@ -4,7 +4,7 @@
   font-family: "Chakra Petch", sans-serif;
   font-weight: 400;
   font-size: 12px;
-  color: white;
+  color: #FFFFFF;
   letter-spacing: 0;
 }
 
@@ -31,12 +31,8 @@
   align-items: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  list-style-type: none;
 }
 .navbar .navbar-div .new-gifos {
-  background: #F7C9F3;
-  border: 1px solid #110038;
-  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -44,9 +40,28 @@
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
-  padding: 9px 26.5px;
+  padding: 4px 4.5px;
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   text-decoration: none;
   margin-right: 16px;
+  position: relative;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+.navbar .navbar-div .new-gifos > a {
+  text-decoration: none;
+  color: #110038;
+  padding: 5px 24px;
+  outline: 1px solid #F7C9F3;
+  display: flex;
+}
+.navbar .navbar-div .new-gifos:hover {
+  background-color: #E6BBE2;
+}
+.navbar .navbar-div .new-gifos:hover > a {
+  outline: 1px dotted #110038;
 }
 .navbar .navbar-div .theme-changer {
   display: flex;
@@ -58,9 +73,7 @@
   margin-right: 16.5px;
 }
 .navbar .navbar-div .theme-changer .drop-menu {
-  background: #F7C9F3;
-  border: 1px solid #110038;
-  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  position: relative;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -68,16 +81,41 @@
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
-  padding: 9px 24px;
-  text-decoration: none;
-  z-index: 3;
-}
-.navbar .navbar-div .theme-changer .drop-arrow {
-  padding: 15px 13px;
+  padding: 4px 4px;
   background: #F7C9F3;
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  cursor: pointer;
   z-index: 3;
+  transition: background 0.2s ease;
+}
+.navbar .navbar-div .theme-changer .drop-menu > a {
+  display: flex;
+  text-decoration: none;
+  color: #110038;
+  padding: 5px 24px;
+  outline: 1px solid #F7C9F3;
+}
+.navbar .navbar-div .theme-changer .drop-arrow {
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  padding: 4px 4px;
+  z-index: 3;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  transition: background 0.2s ease;
+}
+.navbar .navbar-div .theme-changer .drop-arrow > img {
+  padding: 11px 9px;
+  outline: 1px solid #F7C9F3;
+}
+.navbar .navbar-div .theme-changer:hover .drop-menu, .navbar .navbar-div .theme-changer:hover .drop-arrow {
+  background-color: #E6BBE2;
+}
+.navbar .navbar-div .theme-changer:hover .drop-menu > a, .navbar .navbar-div .theme-changer:hover .drop-arrow > img {
+  outline: 1px dotted #110038;
 }
 .navbar .navbar-div .theme-select {
   display: flex;
@@ -85,30 +123,30 @@
   align-items: stretch;
   flex-direction: column;
   flex-wrap: nowrap;
-  position: absolute;
   background: #E6E6E6;
   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  position: absolute;
   top: 15px;
   width: 100%;
   visibility: hidden;
   transition: top 0.1s ease;
 }
 .navbar .navbar-div .theme-select span {
-  position: relative;
   font-family: "Chakra Petch", sans-serif;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
   color: #110038;
-  padding: 7px 0;
-  padding-left: 16px;
   letter-spacing: 0;
+  text-align: unset;
   line-height: 22px;
+  padding: 7px 0;
   background: #F0F0F0;
   border: 1px solid #808080;
   box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  position: relative;
+  padding-left: 16px;
   margin: 10px;
   cursor: pointer;
-  display: block;
 }
 .navbar .navbar-div .theme-select span:last-child {
   margin-top: 0;
@@ -131,17 +169,19 @@
 .navbar .navbar-div .theme-select span:active, .navbar .navbar-div .theme-select span:hover {
   background: #FFF4FD;
   border: 1px solid #CCA6C9;
-  box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+  box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 c-white;
 }
 .navbar .navbar-div .my-gifos {
-  position: relative;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
+  font-weight: 500;
   color: #110038;
   letter-spacing: 0;
+  text-align: unset;
   line-height: 18px;
-  text-decoration: none;
   padding: 7px 0;
+  position: relative;
+  text-decoration: none;
   padding-right: 20px;
 }
 .navbar .navbar-div .my-gifos::before {
@@ -154,7 +194,7 @@
   left: 1px;
 }
 .navbar .navbar-div .my-gifos:hover {
-  border: 1px dotted #110038;
+  outline: 1px dotted #110038;
 }
 .navbar .navbar-div .my-gifos:active::before {
   background-color: #9C8DAB;
