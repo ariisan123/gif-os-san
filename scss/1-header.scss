@@ -62,7 +62,7 @@
                 @include buttons(4px, 4px);
                 @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
                 cursor: pointer;
-                z-index: 3;
+                z-index: 10;
                 transition: background .2s ease;
 
                 > a{
@@ -78,7 +78,7 @@
             .drop-arrow{
                 @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
                 padding: 4px 4px;
-                z-index: 3;
+                z-index: 10;
                 cursor: pointer;
                 position: relative;
                 display: flex;
@@ -109,6 +109,7 @@
             width: 100%;
             visibility: hidden;
             transition: top .1s ease;
+            z-index: 6;
             
             span{
                 @include buttons($l-height:22px, $pad-tb:7px,$t-align:unset);

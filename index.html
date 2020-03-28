@@ -44,15 +44,36 @@
         </nav>
     </header>
 
-    <section class="search-main">
-        <h3>Buscar</h3>
+    <section class="search-section">
+        <div class="search-main">
+            <h3>Buscar</h3>
 
-        <div class="search-container">
-            <input type="text" name="search" id="inp-search">
-            <button type="button"><span></span>Buscar</button>
+            <div class="search-container">
+                <input type="text" name="search" id="inp-search">
+                <button type="button"><span></span>Buscar</button>
+            </div>
+        </div>
+        <div class="search-options">
+            <span class="search-option op1">Resultado de búsqueda sugerido</span>
+            <span class="search-option op2">Un resultado similar de búsqueda</span>
+            <span class="search-option op3">Y otro más</span>
         </div>
 
         <div class="gif-container"></div>
+    </section>
+
+    <section class="suggested-main">
+        <h3>Hoy te sugerimos:</h3>
+
+        <div class="suggested-container">
+            <div class="sug-gif">
+                <span class="sug-gif-title">titulaso de prueba</span>
+                <embed
+                    src="https://media1.giphy.com/media/5UvpZMCHoeRQ1ppMgv/giphy.gif?cid=6db8b6ca4154a2b8dbbc7cc6ed541447d4db22a280796d6e&rid=giphy.gif">
+                <button class="sug-gif-bttn">Ver más...</button>
+            </div>
+        </div>
+
     </section>
 
     <script src="./scripts/1-navbar.js"></script>

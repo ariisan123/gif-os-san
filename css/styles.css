@@ -86,7 +86,7 @@
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   cursor: pointer;
-  z-index: 3;
+  z-index: 10;
   transition: background 0.2s ease;
 }
 .navbar .navbar-div .theme-changer .drop-menu > a {
@@ -101,7 +101,7 @@
   border: 1px solid #110038;
   box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   padding: 4px 4px;
-  z-index: 3;
+  z-index: 10;
   cursor: pointer;
   position: relative;
   display: flex;
@@ -130,6 +130,7 @@
   width: 100%;
   visibility: hidden;
   transition: top 0.1s ease;
+  z-index: 6;
 }
 .navbar .navbar-div .theme-select span {
   font-family: "Chakra Petch", sans-serif;
@@ -204,13 +205,19 @@
   color: #9C8DAB;
 }
 
-.search-main {
+.search-section {
   margin-left: 6.9%;
   margin-right: 9.7%;
+  position: relative;
+}
+
+.search-main {
   margin-top: 3.3%;
   padding: 3px;
   background: #E6E6E6;
   box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  position: relative;
+  z-index: 5;
 }
 .search-main > h3 {
   padding-left: 3px;
@@ -297,6 +304,157 @@
   background-image: url("../assets/lupa_inactive.svg");
   background-repeat: no-repeat;
   background-position: 10px;
+}
+
+.search-options {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  padding: 6px 0 16px 15px;
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  top: 90px;
+  visibility: hidden;
+  transition: top 0.3s ease-out;
+}
+.search-options span {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: left;
+  line-height: 22px;
+  padding: 7px 0;
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  padding-left: 16px;
+  margin-top: 10px;
+  width: calc(100% - 130px);
+  position: relative;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+.search-options span::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  outline: 1px solid #F0F0F0;
+}
+.search-options span:hover {
+  background: #DBDBDB;
+  border: 1px solid #808080;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+.search-options span:hover::before {
+  outline: 1px dotted #110038;
+}
+
+.suggested-main {
+  margin-left: 6.9%;
+  margin-right: 9.7%;
+  margin-top: 64px;
+}
+.suggested-main h3 {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  padding: 7px;
+  font-weight: 500;
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+}
+
+.suggested-container {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.suggested-container .sug-gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background: #E6E6E6;
+  box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  padding: 3px 4px;
+  position: relative;
+}
+.suggested-container .sug-gif span {
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  padding: 3px;
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+.suggested-container .sug-gif span::before {
+  content: "";
+  position: absolute;
+  background-image: url(../assets/close.svg);
+  width: 16px;
+  height: 14px;
+  right: 4px;
+}
+.suggested-container .sug-gif embed {
+  border: 1px solid #E6E6E6;
+}
+.suggested-container .sug-gif button {
+  position: absolute;
+  bottom: 19px;
+  left: 11px;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  padding: 8px 10px;
+  background: #4180F6;
+  border: 1px solid #4C2F99;
+  box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.suggested-container .sug-gif button::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  right: 4px;
+  left: 4px;
+}
+.suggested-container .sug-gif:hover button {
+  background: #3A72DB;
+  border: 1px solid #4C2F99;
+  box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+}
+.suggested-container .sug-gif:hover button::before {
+  outline: 1px dotted #110038;
+}
+.suggested-container .sug-gif:hover embed {
+  border: 1px dotted #110038;
 }
 
 /*# sourceMappingURL=styles.css.map */

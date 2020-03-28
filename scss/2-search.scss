@@ -1,9 +1,15 @@
-.search-main{
+.search-section{
     margin-left: 6.9%;
     margin-right: 9.7%;
+    position: relative;
+}
+
+.search-main{
     margin-top: 3.3%;
     padding: 3px;
     @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+    position: relative;
+    z-index: 5;
 
     >h3{
         padding-left: 3px;
@@ -76,6 +82,50 @@
             background-image: url('../assets/lupa_inactive.svg');
             background-repeat: no-repeat;
             background-position: 10px;
+        }
+
+    }
+
+}
+
+.search-options{
+    @include dis_flex($f_dir: column, $align: left);
+    @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+    padding: 6px 0 16px 15px;
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    top: 90px;
+    
+    visibility: hidden;    
+    transition: top .3s ease-out;
+    
+    span{
+        @include buttons(7px, 0, 16px, 22px, left);
+        @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
+        padding-left: 16px;
+        margin-top: 10px;
+        width: calc(100% - 130px);
+        position: relative;
+        transition: background-color .2s ease;
+        cursor: pointer;
+
+        &::before{
+            content: '';
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            left: 4px;
+            right: 4px;
+            outline: 1px solid $c-gray-8;
+        }
+
+        &:hover{
+            @include bg_bder_shadow($c-gray-10, $c-gray-1, $c-gray-4, $c-white);
+        }
+    
+        &:hover::before{
+            outline: 1px dotted $c-font;
         }
 
     }
