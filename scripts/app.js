@@ -1,5 +1,3 @@
-apiKey = 'SHG6tML92fdVMBeKXAMm4NhdLs0qCXyS';
-
 function create_element(className, new_tag, tagClass, i = 0) {
     let element = document.getElementsByClassName(className)
     const newTag = document.createElement(new_tag)
@@ -8,6 +6,8 @@ function create_element(className, new_tag, tagClass, i = 0) {
 }
 
 function search_element(element, limit = '25') {
+    apiKey = 'SHG6tML92fdVMBeKXAMm4NhdLs0qCXyS';
+
     fetch('http://api.giphy.com/v1/gifs/search?q=' + element + '&limit=' + limit + '&api_key=' + apiKey)
 
         .then(response => response.json())

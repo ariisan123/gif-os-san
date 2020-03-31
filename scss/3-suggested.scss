@@ -17,13 +17,21 @@
 
 .suggested-container{
     margin-top: 16px;
-    @include dis_flex(flex-start, $wrap: wrap);
+    /* @include dis_flex(flex-start, $wrap: wrap); */
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
 
     .sug-gif{
         @include dis_flex($f_dir: column);
         @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+        height: auto;
+        max-width: 18vw;
         padding: 3px 4px;
         position: relative;
+
 
         span{
             font-family: $font;
@@ -51,8 +59,10 @@
 
         }
 
-        embed{
+        img{
             border: 1px solid $c-gray-6;
+            max-width: 100%;
+            height: auto;
         }
 
         button{
@@ -90,7 +100,7 @@
             outline: 1px dotted $c-font;
         }
 
-        &:hover embed{
+        &:hover img{
             border: 1px dotted $c-font;
         }
 
