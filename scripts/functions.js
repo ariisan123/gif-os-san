@@ -36,8 +36,6 @@ function removeGifBy(title) {
     while (gifIndex >= 0) {
         tag.splice(gifIndex, 1);
         gifIndex = tag.indexOf('gif');
-        console.log(tag.indexOf('gif'));
-        console.log(tag);
     }
 
     let byIndex = tag.indexOf('by');
@@ -45,7 +43,6 @@ function removeGifBy(title) {
     while (byIndex >= 0) {
         tag.splice(byIndex, 1);
         byIndex = tag.indexOf('by');
-        console.log(tag);
     }
 
     tag = tag.join(' ');

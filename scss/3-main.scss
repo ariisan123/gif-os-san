@@ -1,22 +1,9 @@
 .main{
     margin-left: 6.9%;
     margin-right: 9.7%;
-
-    h3{
-        font-family: $font;
-        font-size: 14px;
-        color: $c-font;
-        letter-spacing: 0;
-        padding: 7px;
-        font-weight: 500;
-        @include bg_bder_shadow($c-gray-11, $c-pink-3, $c-gray-7, $c-pink-5, -2px, 2px);
-        margin-top: 64px;
-        margin-bottom: 16px;
-    }
-
 }
 
-.suggested-container, .trends-container{
+.suggested-container, .trends-container, .gif-search-container{
     display: flex;
     flex-flow: wrap row;
     justify-content: space-between;
@@ -108,11 +95,13 @@
 
 }
 
-.trend-gif{
+.trend-gif, .search-gif{
     @include dis_flex($f_dir: column);
     position: relative;
     height: 298px;
     padding: 3px;
+    flex: 1 1 1;
+
     overflow: hidden;
 
 

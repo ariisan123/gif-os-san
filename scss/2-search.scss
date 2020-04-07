@@ -2,6 +2,11 @@
     margin-left: 6.9%;
     margin-right: 9.7%;
     position: relative;
+
+    >h3{
+        display: none;
+        transition: visibility .2s ease;
+    }
 }
 
 .search-main{
@@ -95,10 +100,10 @@
     z-index: 3;
     position: absolute;
     width: 100%;
-    top: 90px;
-    
+    top: 20px;
+
     visibility: hidden;    
-    transition: top .3s ease-out;
+    transition: top .1s ease;
     
     span{
         @include buttons(7px, 0, 16px, 22px, left);
@@ -131,3 +136,21 @@
     }
 
 }
+
+.sug-title{
+    font-family: $font;
+    font-size: 14px;
+    color: $c-font;
+    letter-spacing: 0;
+    padding: 7px;
+    font-weight: 500;
+    @include bg_bder_shadow($c-gray-11, $c-pink-3, $c-gray-7, $c-pink-5, -2px, 2px);
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
+
+.gif-search-container{
+    visibility: hidden;
+    transition: all .2s ease;
+}
+
