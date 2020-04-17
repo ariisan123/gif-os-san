@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIF-OS</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 class="h-title">
+        ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+        de visitas: 12.765.803
+      </h1>
+      <nav class="navbar">
+        <a href="./index.html" id="go-back"></a>
+        <img src="./assets/gifOF_logo.png" alt="gifOF_logo" class="logo" />
+      </nav>
+    </header>
+
+    <section class="new-main">
+      <div class="new-gif">
+        <span class="new-title">Crear Guifos</span>
+        <div class="new-info">
+          <span>Aquí podrás crear tus propios guifos</span>
+          <p>
+            Crear tu <b>guifo</b> es muy fácil, graba cualquier imagen con tu
+            cámara y obtén guifos personalizados. Los pasos para crear tu guifo
+            son:
+          </p>
+          <span class="list"
+            ><b>1)</b> Dar permisos de acceso a la cámara (sólo por el tiempo de
+            uso)</span
+          >
+          <span class="list"> <b>2)</b> Capturar tu momento guifo</span>
+          <span class="list"> <b>3)</b> Revisar el momento</span>
+          <span class="list"> <b>4)</b> Listo para subir y compartir!</span>
+          <span class="list"
+            >¿Quieres comenzar a crear tu <b>guifo</b> ahora?</span
+          >
+          <div class="buttons">
+            <button>Cancelar</button>
+            <button id="start-btn">Comenzar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="./scripts/functions.js"></script>
+    <script src="./scripts/upload.js"></script>
+  </body>
+</html>

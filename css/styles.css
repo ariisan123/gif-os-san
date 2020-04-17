@@ -66,8 +66,8 @@
       text-decoration: none;
       margin-right: 16px;
       position: relative;
-      -webkit-transition: background .2s ease;
-      transition: background .2s ease;
+      -webkit-transition: background 0.2s ease;
+      transition: background 0.2s ease;
       cursor: pointer; }
       .navbar .navbar-div .new-gifos > a {
         text-decoration: none;
@@ -115,8 +115,8 @@
                 box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
         cursor: pointer;
         z-index: 10;
-        -webkit-transition: background .2s ease;
-        transition: background .2s ease; }
+        -webkit-transition: background 0.2s ease;
+        transition: background 0.2s ease; }
         .navbar .navbar-div .theme-changer .drop-menu > a {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -137,8 +137,8 @@
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-transition: background .2s ease;
-        transition: background .2s ease; }
+        -webkit-transition: background 0.2s ease;
+        transition: background 0.2s ease; }
         .navbar .navbar-div .theme-changer .drop-arrow > img {
           padding: 11px 9px;
           outline: 1px solid #F7C9F3; }
@@ -169,8 +169,8 @@
       top: 15px;
       width: 100%;
       visibility: hidden;
-      -webkit-transition: top .1s ease;
-      transition: top .1s ease;
+      -webkit-transition: top 0.1s ease;
+      transition: top 0.1s ease;
       z-index: 6; }
       .navbar .navbar-div .theme-select span {
         font-family: "Chakra Petch", sans-serif;
@@ -192,7 +192,7 @@
         .navbar .navbar-div .theme-select span:last-child {
           margin-top: 0; }
         .navbar .navbar-div .theme-select span::before {
-          content: '';
+          content: "";
           position: absolute;
           width: 8px;
           height: 1px;
@@ -210,7 +210,7 @@
           border: 1px solid #CCA6C9;
           -webkit-box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 c-white;
                   box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 c-white; }
-    .navbar .navbar-div .my-gifos {
+    .navbar .navbar-div #my-gifos {
       font-family: "Chakra Petch", sans-serif;
       font-size: 16px;
       font-weight: 500;
@@ -222,21 +222,21 @@
       position: relative;
       text-decoration: none;
       padding-right: 20px; }
-      .navbar .navbar-div .my-gifos::before {
-        content: '';
+      .navbar .navbar-div #my-gifos::before {
+        content: "";
         position: absolute;
         width: 8px;
         height: 1px;
         background-color: #110038;
         bottom: 7px;
         left: 1px; }
-      .navbar .navbar-div .my-gifos:hover {
+      .navbar .navbar-div #my-gifos:hover {
         outline: 1px dotted #110038; }
-      .navbar .navbar-div .my-gifos:active::before {
-        background-color: #9C8DAB; }
-      .navbar .navbar-div .my-gifos:active {
+      .navbar .navbar-div #my-gifos:active::before {
+        background-color: #9c8dab; }
+      .navbar .navbar-div #my-gifos:active {
         border: none;
-        color: #9C8DAB; }
+        color: #9c8dab; }
 
 .search-section {
   margin-left: 6.9%;
@@ -244,8 +244,41 @@
   position: relative; }
   .search-section > h3 {
     display: none;
-    -webkit-transition: visibility .2s ease;
-    transition: visibility .2s ease; }
+    -webkit-transition: visibility 0.2s ease;
+    transition: visibility 0.2s ease; }
+  .search-section .gif-search-tag {
+    position: relative;
+    display: inline-block;
+    margin-top: 12px;
+    margin-right: 8px;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    padding: 8px 10px;
+    background: #4180F6;
+    border: 1px solid #4C2F99;
+    -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+            box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+    cursor: pointer;
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease; }
+    .search-section .gif-search-tag::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      right: 4px;
+      left: 4px; }
+    .search-section .gif-search-tag:hover {
+      background: #3A72DB;
+      border: 1px solid #4C2F99;
+      -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
+              box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
+    .search-section .gif-search-tag:hover::before {
+      outline: 1px dotted #110038; }
 
 .search-main {
   margin-top: 3.3%;
@@ -335,12 +368,12 @@
     background-repeat: no-repeat;
     background-position: 10px;
     cursor: pointer;
-    -webkit-transition: background-color .2s ease;
-    transition: background-color .2s ease; }
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; }
     .search-container > button:hover {
       background-color: #E6BBE2; }
     .search-container > button::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 4px;
       bottom: 4px;
@@ -384,8 +417,8 @@
   width: 100%;
   top: 20px;
   visibility: hidden;
-  -webkit-transition: top .1s ease;
-  transition: top .1s ease; }
+  -webkit-transition: top 0.1s ease;
+  transition: top 0.1s ease; }
   .search-options span {
     font-family: "Chakra Petch", sans-serif;
     font-size: 16px;
@@ -403,11 +436,11 @@
     margin-top: 10px;
     width: calc(100% - 130px);
     position: relative;
-    -webkit-transition: background-color .2s ease;
-    transition: background-color .2s ease;
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
     cursor: pointer; }
     .search-options span::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 4px;
       bottom: 4px;
@@ -438,14 +471,16 @@
 
 .gif-search-container {
   visibility: hidden;
-  -webkit-transition: all .2s ease;
-  transition: all .2s ease; }
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease; }
 
 .main {
   margin-left: 6.9%;
   margin-right: 9.7%; }
 
-.suggested-container, .trends-container, .gif-search-container {
+.suggested-container,
+.trends-container,
+.gif-search-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -502,7 +537,7 @@
             align-items: center;
     margin-bottom: 2px; }
     .sug-gif span::before {
-      content: '';
+      content: "";
       position: absolute;
       background-image: url(../assets/close.svg);
       width: 16px;
@@ -517,7 +552,7 @@
     overflow: hidden; }
   .sug-gif:hover img {
     border: 1px dotted #110038; }
-  .sug-gif a {
+  .sug-gif .sug-link {
     position: absolute;
     bottom: 19px;
     left: 11px;
@@ -534,24 +569,25 @@
     -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
             box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
     cursor: pointer;
-    -webkit-transition: background .2s ease;
-    transition: background .2s ease; }
-    .sug-gif a::before {
-      content: '';
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease; }
+    .sug-gif .sug-link::before {
+      content: "";
       position: absolute;
       top: 4px;
       bottom: 4px;
       right: 4px;
       left: 4px; }
-    .sug-gif a:hover {
+    .sug-gif .sug-link:hover {
       background: #3A72DB;
       border: 1px solid #4C2F99;
       -webkit-box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF;
               box-shadow: inset -2px -2px 0 0 #284F99, inset 2px 2px 0 0 #FFFFFF; }
-    .sug-gif a:hover::before {
+    .sug-gif .sug-link:hover::before {
       outline: 1px dotted #110038; }
 
-.trend-gif, .search-gif {
+.trend-gif,
+.search-gif {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -574,8 +610,9 @@
       -ms-flex: 1 1 1;
           flex: 1 1 1;
   overflow: hidden; }
-  .trend-gif::before, .search-gif::before {
-    content: '';
+  .trend-gif::before,
+  .search-gif::before {
+    content: "";
     position: absolute;
     top: 3px;
     bottom: 3px;
@@ -583,13 +620,15 @@
     left: 3px;
     outline: 1px dotted transparent;
     z-index: 10;
-    -webkit-transition: outline .2s ease;
-    transition: outline .2s ease; }
-  .trend-gif img, .search-gif img {
+    -webkit-transition: outline 0.2s ease;
+    transition: outline 0.2s ease; }
+  .trend-gif img,
+  .search-gif img {
     overflow: hidden;
     width: 100%;
     height: 100%; }
-  .trend-gif span, .search-gif span {
+  .trend-gif span,
+  .search-gif span {
     font-family: "Chakra Petch", sans-serif;
     font-size: 14px;
     font-weight: bold;
@@ -608,14 +647,264 @@
     width: calc(100% - 6px);
     bottom: -5px;
     visibility: hidden;
-    -webkit-transition: all .1s ease-in;
-    transition: all .1s ease-in; }
-  .trend-gif:hover, .search-gif:hover {
+    -webkit-transition: all 0.1s ease-in;
+    transition: all 0.1s ease-in; }
+  .trend-gif:hover,
+  .search-gif:hover {
     background: #E6E6E6;
     -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
             box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
-  .trend-gif:hover::before, .search-gif:hover::before {
+  .trend-gif:hover::before,
+  .search-gif:hover::before {
     outline: 1px dotted #110038; }
-  .trend-gif:hover span, .search-gif:hover span {
+  .trend-gif:hover span,
+  .search-gif:hover span {
     visibility: visible;
     bottom: 3px; }
+
+.gifos {
+  margin-left: 6.9%;
+  margin-right: 9.7%; }
+
+#go-back {
+  background-image: url("../assets/arrow.svg");
+  width: 24px;
+  height: 26px;
+  position: absolute;
+  left: 0;
+  margin-left: 4.2%; }
+
+.new-main {
+  margin-top: 10%; }
+
+.new-gif {
+  margin: 0 26.3%;
+  padding: 3px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  .new-gif .new-title {
+    display: block;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    font-weight: 600;
+    background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    padding: 3.4px 0 2.6px 4px;
+    margin-bottom: 17px; }
+
+.new-info {
+  font-family: "Chakra Petch", sans-serif;
+  margin-left: 73px;
+  position: relative; }
+  .new-info .list,
+  .new-info p {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 20px;
+    max-width: 518px; }
+  .new-info > span:first-child {
+    display: block;
+    font-size: 16px;
+    color: #110038;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin-bottom: 17px;
+    margin-top: 30px;
+    position: relative; }
+    .new-info > span:first-child::before {
+      content: "";
+      background-image: url(../assets/window.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: -50px;
+      width: 32px;
+      height: 32px; }
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin-right: 2.5%;
+  margin-bottom: 3.4%;
+  margin-top: 28px; }
+  .buttons button {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    padding: 9px 35px;
+    margin-left: 16px;
+    cursor: pointer; }
+  .buttons > button:first-child {
+    background: #FFF4FD;
+    border: 1px solid #110038;
+    -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+            box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+  .buttons > button:last-child {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+            box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+
+.video-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: 50vw;
+  height: auto;
+  padding: 3px 4px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+  .video-container > .video-title {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: 900;
+    letter-spacing: 0;
+    background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+    background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+    width: 100%;
+    padding: 3px 0;
+    padding-left: 4px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative; }
+    .video-container > .video-title::before {
+      content: "";
+      background: url("../assets/button3.svg") no-repeat;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 13px; }
+
+.video-div {
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -1px -1px 0 0 #E6E6E6, inset 1px 1px 0 0 #000000;
+          box-shadow: inset -1px -1px 0 0 #E6E6E6, inset 1px 1px 0 0 #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 8px 13px 0 8px;
+  padding: 2px;
+  width: calc(100% - 21px); }
+  .video-div > video {
+    width: 100%;
+    position: relative; }
+
+.video-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 21px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+  .video-buttons:hover > button::before {
+    outline: 1px dotted #110038; }
+  .video-buttons:hover > span::before {
+    outline: 1px dotted #110038; }
+  .video-buttons:hover > span {
+    background-color: #E6BBE2; }
+  .video-buttons:hover > button {
+    background-color: #E6BBE2; }
+  .video-buttons > span {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+            box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    background-image: url(../assets/camera.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 18px;
+    height: 16.5px;
+    padding: 18px;
+    position: relative;
+    cursor: pointer; }
+    .video-buttons > span::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      right: 3px;
+      left: 3px; }
+  .video-buttons > button {
+    background: #F7C9F3;
+    border: 1px solid #110038;
+    -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+            box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #110038;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    padding: 9px 39.5px;
+    position: relative;
+    outline: 0;
+    cursor: pointer; }
+    .video-buttons > button::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      bottom: 3px;
+      right: 3px;
+      left: 3px; }
+
+/*# sourceMappingURL=styles.css.map */

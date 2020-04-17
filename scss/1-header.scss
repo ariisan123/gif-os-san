@@ -1,184 +1,179 @@
-.h-title{
-    background-image: $pt-gradient;
-    box-shadow: 0 1px 0 0 $c-font;
-    font-family: $font;
-    font-weight: 400;
-    font-size: 12px;
-    color: $c-white;
-    letter-spacing: 0;
+.h-title {
+  background-image: $pt-gradient;
+  box-shadow: 0 1px 0 0 $c-font;
+  font-family: $font;
+  font-weight: 400;
+  font-size: 12px;
+  color: $c-white;
+  letter-spacing: 0;
 }
 
-.navbar{
-    @include dis_flex($justify:flex-end);
-    position: relative;
-    margin-right: 9.8%;
-    margin-top: 3.2%;
-    
-    .logo{
+.navbar {
+  @include dis_flex($justify: flex-end);
+  position: relative;
+  margin-right: 9.8%;
+  margin-top: 3.2%;
+
+  .logo {
+    position: absolute;
+    left: 0;
+    margin-left: 6.3%;
+    width: 102px;
+    height: 64px;
+  }
+
+  .navbar-div {
+    @include dis_flex;
+
+    .new-gifos {
+      @include buttons(4px, 4.5px);
+      @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+      text-decoration: none;
+      margin-right: 16px;
+      position: relative;
+      transition: background 0.2s ease;
+      cursor: pointer;
+
+      > a {
+        text-decoration: none;
+        color: $c-font;
+        padding: 5px 24px;
+        outline: 1px solid $c-pink-4;
+        display: flex;
+      }
+
+      &:hover {
+        background-color: $c-pink-3;
+      }
+
+      &:hover > a {
+        outline: 1px dotted $c-font;
+      }
+    }
+
+    .theme-changer {
+      @include dis_flex;
+      position: relative;
+      margin-right: 16.5px;
+
+      .drop-menu {
+        position: relative;
+        @include buttons(4px, 4px);
+        @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.2s ease;
+
+        > a {
+          display: flex;
+          text-decoration: none;
+          color: $c-font;
+          padding: 5px 24px;
+          outline: 1px solid $c-pink-4;
+        }
+      }
+
+      .drop-arrow {
+        @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+        padding: 4px 4px;
+        z-index: 10;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        transition: background 0.2s ease;
+
+        > img {
+          padding: 11px 9px;
+          outline: 1px solid $c-pink-4;
+        }
+      }
+
+      &:hover .drop-menu,
+      &:hover .drop-arrow {
+        background-color: $c-pink-3;
+      }
+
+      &:hover .drop-menu > a,
+      &:hover .drop-arrow > img {
+        outline: 1px dotted $c-font;
+      }
+    }
+
+    .theme-select {
+      @include dis_flex($f_dir: column, $align: stretch);
+      @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+      position: absolute;
+      top: 15px;
+      width: 100%;
+      visibility: hidden;
+      transition: top 0.1s ease;
+      z-index: 6;
+
+      span {
+        @include buttons($l-height: 22px, $pad-tb: 7px, $t-align: unset);
+        @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
+        position: relative;
+        padding-left: 16px;
+        margin: 10px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-top: 0;
+        }
+
+        &::before {
+          content: "";
+          position: absolute;
+          width: 8px;
+          height: 1px;
+          background-color: $c-font;
+          bottom: 10px;
+          left: 10px;
+          visibility: hidden;
+          transition: left 300ms ease;
+        }
+
+        &:hover::before {
+          visibility: visible;
+          left: 17px;
+        }
+
+        &:active,
+        &:hover {
+          @include bg_bder_shadow($c-gray-9, $c-pink-2, $c-gray-7, c-white);
+        }
+      }
+    }
+
+    #my-gifos {
+      @include buttons(7px, $t-align: unset);
+      position: relative;
+
+      text-decoration: none;
+      padding-right: 20px;
+
+      &::before {
+        content: "";
         position: absolute;
-        left: 0;
-        margin-left: 6.3%;
-        width: 102px;
-        height: 64px;
+        width: 8px;
+        height: 1px;
+        background-color: $c-font;
+        bottom: 7px;
+        left: 1px;
+      }
+
+      &:hover {
+        outline: 1px dotted $c-font;
+      }
+
+      &:active::before {
+        background-color: #9c8dab;
+      }
+
+      &:active {
+        border: none;
+        color: #9c8dab;
+      }
     }
-
-    .navbar-div{
-        @include dis_flex;
-
-        .new-gifos{
-            @include buttons(4px,4.5px);
-            @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
-            text-decoration: none;
-            margin-right: 16px;
-            position: relative;
-            transition: background .2s ease;
-            cursor: pointer;
-
-            > a{
-                text-decoration: none;
-                color: $c-font;
-                padding: 5px 24px;
-                outline: 1px solid $c-pink-4;
-                display: flex;
-            }
-
-            &:hover{
-                background-color: $c-pink-3;
-            }
-
-            &:hover >a{
-                outline: 1px dotted $c-font;
-            }
-
-        }
-
-        .theme-changer{
-            @include dis_flex;
-            position: relative;
-            margin-right: 16.5px;
-           
-            .drop-menu{
-                position: relative;
-                @include buttons(4px, 4px);
-                @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
-                cursor: pointer;
-                z-index: 10;
-                transition: background .2s ease;
-
-                > a{
-                    display: flex;
-                    text-decoration: none;
-                    color: $c-font;
-                    padding: 5px 24px;
-                    outline: 1px solid $c-pink-4;
-                }
-            
-            }
-    
-            .drop-arrow{
-                @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
-                padding: 4px 4px;
-                z-index: 10;
-                cursor: pointer;
-                position: relative;
-                display: flex;
-                transition: background .2s ease;
-            
-                >img{
-                    padding: 11px 9px;
-                    outline: 1px solid $c-pink-4;
-                }
-
-            }
-
-            &:hover .drop-menu, &:hover .drop-arrow{
-                background-color: $c-pink-3;
-            }
-
-            &:hover .drop-menu > a, &:hover .drop-arrow > img{
-                outline: 1px dotted $c-font;
-            }
-        
-        }
-        
-        .theme-select{
-            @include dis_flex($f_dir: column, $align: stretch);
-            @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
-            position: absolute;
-            top: 15px;
-            width: 100%;
-            visibility: hidden;
-            transition: top .1s ease;
-            z-index: 6;
-            
-            span{
-                @include buttons($l-height:22px, $pad-tb:7px,$t-align:unset);
-                @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
-                position: relative;
-                padding-left: 16px;
-                margin: 10px;
-                cursor: pointer;
-                
-                &:last-child{
-                    margin-top: 0;
-                }
-
-                &::before{
-                    content: '';
-                    position: absolute;
-                    width: 8px;
-                    height: 1px;
-                    background-color: $c-font;
-                    bottom: 10px;
-                    left: 10px;
-                    visibility: hidden;
-                    transition: left 300ms ease;
-                }
-
-                &:hover::before{
-                    visibility: visible;
-                    left: 17px;
-                }
-
-                &:active, &:hover{
-                    @include bg_bder_shadow($c-gray-9, $c-pink-2, $c-gray-7, c-white);
-                }
-            }
-        }
-
-        .my-gifos{
-            @include buttons(7px, $t-align:unset);
-            position: relative;
-            
-            text-decoration: none;
-            padding-right: 20px;
-
-            &::before{
-                content: '';
-                position: absolute;
-                width: 8px;
-                height: 1px;
-                background-color:  $c-font;
-                bottom: 7px;
-                left: 1px;
-            }
-
-            &:hover{
-                outline: 1px dotted $c-font;
-            }
-
-            &:active::before{
-                background-color: #9C8DAB;
-            }
-
-            &:active{
-                border: none;
-                color: #9C8DAB;
-            }
-
-        }
-    
-    }
-
-   
+  }
 }

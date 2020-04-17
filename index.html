@@ -1,78 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GIF OS</title>
 
     <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <header>
+      <h1 class="h-title">
+        ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+        de visitas: 12.765.803
+      </h1>
 
-        <h1 class="h-title">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
-            12.765.803</h1>
+      <nav class="navbar">
+        <img src="./assets/gifOF_logo.png" alt="gifOF_logo" class="logo" />
+        <div class="navbar-div">
+          <span class="new-gifos"
+            ><a href="./upload.html">Crear Guifos</a></span
+          >
 
-        <nav class="navbar">
-            <img src="./assets/gifOF_logo.png" alt="gifOF_logo" class="logo">
-            <div class="navbar-div">
+          <div class="theme-changer">
+            <span class="drop-menu drop-js"
+              ><a href="#" class="out-js">Elegir tema</a></span
+            >
+            <span class="drop-arrow drop-js"
+              ><img class="out-js" src="./assets/dropdown.svg" alt="dropdown"
+            /></span>
 
-                <span class="new-gifos"><a href="#">Crear Guifos</a></span>
-
-                <div class="theme-changer">
-                    <span class="drop-menu drop-js"><a href="#" class="out-js">Elegir tema</a></span>
-                    <span class="drop-arrow drop-js"><img class="out-js" src="./assets/dropdown.svg"
-                            alt="dropdown"></span>
-                    <div class="theme-select">
-                        <span>Sailor Day</span>
-                        <span>Sailor Night</span>
-                    </div>
-                </div>
-
-                <a href="#" class="my-gifos">Mis Guifos</a>
-
+            <div class="theme-select">
+              <span>Sailor Day</span>
+              <span>Sailor Night</span>
             </div>
-        </nav>
+          </div>
+
+          <a href="#" id="my-gifos">Mis Guifos</a>
+        </div>
+      </nav>
     </header>
 
     <section class="search-section">
-        <div class="search-main">
-            <h3>Buscar</h3>
+      <div class="search-main">
+        <h3>Buscar</h3>
 
-            <div class="search-container">
-                <input type="text" name="search" id="inp-search">
-                <button type="button" id="search-bttn"><span></span>Buscar</button>
-            </div>
+        <div class="search-container">
+          <input type="text" name="search" id="inp-search" />
+          <button type="button" id="search-bttn"><span></span>Buscar</button>
         </div>
-        <div class="search-options">
-            <span class="search-option op1">Resultado de búsqueda sugerido</span>
-            <span class="search-option op2">Un resultado similar de búsqueda</span>
-            <span class="search-option op3">Y otro más</span>
-        </div>
-        <h3 class="sug-title">Resultados de </h3>
-        <div class="gif-search-container"></div>
+      </div>
+      <div class="search-options">
+        <span class="search-option op1">Resultado de búsqueda sugerido</span>
+        <span class="search-option op2">Un resultado similar de búsqueda</span>
+        <span class="search-option op3">Y otro más</span>
+      </div>
+      <h3 class="sug-title">Resultados de</h3>
+      <div class="gif-search-container"></div>
     </section>
 
     <section class="main">
-        <h3 class="sug-title">Hoy te sugerimos:</h3>
+      <h3 class="sug-title">Hoy te sugerimos:</h3>
 
-        <div class="suggested-container">
-        </div>
+      <div class="suggested-container"></div>
 
-        <h3 class="sug-title">Tendencias:</h3>
+      <h3 class="sug-title">Tendencias:</h3>
 
-        <div class="trends-container">
-        </div>
+      <div class="trends-container"></div>
+    </section>
 
+    <section class="gifos">
+      <h3 class="sug-title">Mis guifos</h3>
+      <div class="gifos-container"></div>
     </section>
 
     <script src="./scripts/functions.js"></script>
@@ -80,6 +87,6 @@
     <script src="./scripts/app.js"></script>
     <script src="./scripts/suggested.js"></script>
     <script src="./scripts/3-trend.js"></script>
-</body>
-
+    <script src="./scripts/mygifos.js"></script>
+  </body>
 </html>
