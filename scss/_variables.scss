@@ -1,73 +1,79 @@
 // Light Theme Colors
 $c-black: #000000;
-$c-white: #FFFFFF;
+$c-white: #ffffff;
 $c-font: #110038;
 
-$c-pink-1: #997D97;
-$c-pink-2: #CCA6C9;
-$c-pink-3: #E6BBE2;
-$c-pink-4: #F7C9F3;
-$c-pink-5: #80687D ;
+$c-pink-1: #997d97;
+$c-pink-2: #cca6c9;
+$c-pink-3: #e6bbe2;
+$c-pink-4: #f7c9f3;
+$c-pink-5: #80687d;
 
-$c-gray-1:  #808080;
-$c-gray-2:  #999999;
-$c-gray-3:  #979797;
-$c-gray-4:  #B4B4B4;
-$c-gray-5:  #F0E5EE;
-$c-gray-6:  #E6E6E6;
-$c-gray-7:  #E6DCE4;
-$c-gray-8:  #F0F0F0;
-$c-gray-9:  #FFF4FD;
-$c-gray-10: #DBDBDB;
-$c-gray-11: #FFFAFE;
+$c-gray-1: #808080;
+$c-gray-2: #999999;
+$c-gray-3: #979797;
+$c-gray-4: #b4b4b4;
+$c-gray-5: #f0e5ee;
+$c-gray-6: #e6e6e6;
+$c-gray-7: #e6dce4;
+$c-gray-8: #f0f0f0;
+$c-gray-9: #fff4fd;
+$c-gray-10: #dbdbdb;
+$c-gray-11: #fffafe;
 
-$c-blue-1: #4C2F99;
-$c-blue-2: #284F99;
-$c-blue-3: #4180F6;
-$c-blue-4: #3A72DB;
+$c-blue-1: #4c2f99;
+$c-blue-2: #284f99;
+$c-blue-3: #4180f6;
+$c-blue-4: #3a72db;
 
-$c-red-1: #993A3A;
-$c-red-2: #FF6161;
+$c-red-1: #993a3a;
+$c-red-2: #ff6161;
 
+$font: "Chakra Petch", sans-serif;
 
-
-
-$font: 'Chakra Petch', sans-serif;
-
-
-$pt-gradient:  linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-
-
-$secondary-theme-gradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+$pt-gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+$secondary-theme-gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 
 // Mixins
 
-@mixin bg_bder_shadow($background, $border, $f-shadow, $s-shadow, $px: -1px, $px2: 1px){
-    background: $background;
-    border: 1px solid $border;
-    box-shadow: inset $px $px 0 0 $f-shadow, inset $px2 $px2 0 0 $s-shadow;
+@mixin bg_bder_shadow(
+  $background,
+  $border,
+  $f-shadow,
+  $s-shadow,
+  $px: -1px,
+  $px2: 1px
+) {
+  background-color: $background;
+  border: 1px solid $border;
+  box-shadow: inset $px $px 0 0 $f-shadow, inset $px2 $px2 0 0 $s-shadow;
 }
 
-@mixin bg_shadow($background, $f-shadow, $s-shadow){
-    background: $background;
-    box-shadow: inset -2px -2px 0 0 $f-shadow, inset 2px 2px 0 0 $s-shadow;
+@mixin bg_shadow($background, $f-shadow, $s-shadow) {
+  background-color: $background;
+  box-shadow: inset -2px -2px 0 0 $f-shadow, inset 2px 2px 0 0 $s-shadow;
 }
 
-@mixin dis_flex($justify: center, $align: center, $f_dir: row, $wrap: nowrap){
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $f_dir;
-    flex-wrap: $wrap;
+@mixin dis_flex($justify: center, $align: center, $f_dir: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $f_dir;
+  flex-wrap: $wrap;
 }
 
-@mixin buttons($pad-tb:0, $pad-lr: 0,$f-size: 16px, $l-height:18px, $t-align:center) {
-    font-family: $font;
-    font-size: $f-size;
-    font-weight: 500;
-    color: $c-font;
-    letter-spacing: 0;
-    text-align: $t-align;
-    line-height: $l-height;
-    padding: $pad-tb $pad-lr;
+@mixin buttons(
+  $pad-tb: 0,
+  $pad-lr: 0,
+  $f-size: 16px,
+  $l-height: 18px,
+  $t-align: center
+) {
+  font-size: $f-size;
+  font-weight: 500;
+  color: $c-font;
+  letter-spacing: 0;
+  text-align: $t-align;
+  line-height: $l-height;
+  padding: $pad-tb $pad-lr;
 }

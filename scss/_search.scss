@@ -1,0 +1,203 @@
+.search-section {
+  margin-left: 6.9%;
+  margin-right: 9.7%;
+  position: relative;
+}
+
+.search-main {
+  margin-top: 3.3%;
+  padding: 3px;
+  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+  position: relative;
+  z-index: 5;
+
+  > h3 {
+    padding-left: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $c-white;
+    letter-spacing: 0;
+    background-image: $pt-gradient;
+  }
+}
+
+.search-container {
+  position: relative;
+  margin: 12px 18px 12px 15px;
+
+  @include dis_flex;
+
+  > input {
+    @include bg_bder_shadow(
+      $c-white,
+      $c-gray-3,
+      $c-gray-6,
+      $c-black,
+      -2px,
+      2px
+    );
+    width: 100%;
+    padding: 13px 0;
+    padding-left: 16px;
+    margin-right: 8px;
+
+    font-family: $font;
+    font-size: 16px;
+    color: $c-font;
+    letter-spacing: 0;
+    line-height: 22px;
+    font-weight: 500;
+  }
+
+  > button {
+    @include dis_flex;
+    @include buttons(9px, 0, 16px, 18px);
+    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    position: relative;
+    padding-right: 14px;
+    padding-left: 36px;
+    background-image: url("../assets/lupa.svg");
+    background-repeat: no-repeat;
+    background-position: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: $c-pink-3;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      right: 4px;
+      outline: 1px solid $c-pink-4;
+    }
+
+    &:hover::before {
+      outline: 1px dotted $c-font;
+    }
+
+    &:disabled {
+      color: $c-gray-4;
+      @include bg_bder_shadow($c-gray-6, $c-gray-1, $c-gray-4, $c-white);
+      background-image: url("../assets/lupa_inactive.svg");
+      background-repeat: no-repeat;
+      background-position: 10px;
+    }
+  }
+}
+
+.search-options {
+  @include dis_flex($f_dir: column, $align: left);
+  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+  padding: 6px 0 16px 15px;
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  top: 20px;
+
+  visibility: hidden;
+  transition: top 0.1s ease;
+
+  span {
+    @include buttons(7px, 0, 16px, 22px, left);
+    @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
+    padding-left: 16px;
+    margin-top: 10px;
+    width: calc(100% - 130px);
+    position: relative;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      right: 4px;
+      outline: 1px solid $c-gray-8;
+    }
+
+    &:hover {
+      @include bg_bder_shadow($c-gray-10, $c-gray-1, $c-gray-4, $c-white);
+    }
+
+    &:hover::before {
+      outline: 1px dotted $c-font;
+    }
+  }
+}
+
+.search-options-active {
+  visibility: visible;
+  top: 97px;
+}
+
+.gif-search-tag {
+  position: relative;
+  display: inline-block;
+  margin-top: 12px;
+  margin-right: 8px;
+  font-family: $font;
+  font-size: 14px;
+  color: $c-white;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  padding: 8px 10px;
+  @include bg_bder_shadow($c-blue-3, $c-blue-1, $c-blue-2, $c-white, -2px, 2px);
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px;
+  }
+
+  &:hover {
+    @include bg_bder_shadow(
+      $c-blue-4,
+      $c-blue-1,
+      $c-blue-2,
+      $c-white,
+      -2px,
+      2px
+    );
+  }
+
+  &:hover::before {
+    outline: 1px dotted $c-font;
+  }
+}
+
+.search-title {
+  font-size: 14px;
+  color: $c-font;
+  letter-spacing: 0;
+  padding: 7px;
+  font-weight: 500;
+  @include bg_bder_shadow(
+    $c-gray-11,
+    $c-pink-3,
+    $c-gray-7,
+    $c-pink-5,
+    -2px,
+    2px
+  );
+  margin-top: 64px;
+  margin-bottom: 16px;
+  display: none;
+}
+
+.gif-search-container {
+  visibility: hidden;
+  transition: all 0.2s ease;
+}

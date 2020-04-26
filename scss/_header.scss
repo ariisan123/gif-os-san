@@ -1,0 +1,207 @@
+.h-title {
+  background-image: $pt-gradient;
+  box-shadow: 0 1px 0 0 $c-font;
+  font-weight: 400;
+  font-size: 12px;
+  color: $c-white;
+  letter-spacing: 0;
+}
+
+.navbar {
+  @include dis_flex($justify: flex-end);
+  position: relative;
+  margin-right: 9.8%;
+  margin-top: 3.2%;
+  margin-left: 6.3%;
+
+  > img {
+    position: absolute;
+    left: 0;
+    width: 102px;
+    height: 64px;
+  }
+}
+
+.navbar-div {
+  @include dis_flex;
+
+  > a:nth-of-type(1) {
+    @include buttons(9px, 26.5px);
+    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    text-decoration: none;
+    margin-right: 16px;
+    position: relative;
+    transition: background 0.2s ease;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      right: 4px;
+      bottom: 4px;
+    }
+
+    &:hover {
+      background-color: $c-pink-3;
+    }
+
+    &:hover::before {
+      outline: 1px dotted $c-font;
+    }
+  }
+
+  > a:nth-of-type(2) {
+    @include buttons(7px);
+    padding-right: 20px;
+    text-decoration: none;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 1px;
+      background-color: $c-font;
+      bottom: 7px;
+      left: 1px;
+    }
+
+    &:hover {
+      outline: 1px dotted $c-font;
+    }
+
+    &:active::before {
+      background-color: #9c8dab;
+    }
+
+    &:active {
+      outline: none;
+      color: #9c8dab;
+    }
+  }
+}
+
+.theme-main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-right: 16.5px;
+}
+
+.theme-changer {
+  @include dis_flex;
+  position: relative;
+  cursor: pointer;
+
+  > span:nth-of-type(1) {
+    @include buttons(9px, 24px);
+    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    cursor: pointer;
+    user-select: none;
+    z-index: 10;
+    transition: background 0.2s ease;
+    position: relative;
+    pointer-events: none;
+    z-index: 10;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      right: 4px;
+      left: 4px;
+    }
+  }
+
+  > span:nth-of-type(2) {
+    background: url(../assets/dropdown.svg) no-repeat center center;
+    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    width: 10px;
+    height: 6px;
+    padding: 18px 18px;
+    position: relative;
+    transition: background 0.2s ease;
+    pointer-events: none;
+    z-index: 10;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      right: 4px;
+    }
+  }
+
+  &:hover > span {
+    background-color: $c-pink-3;
+  }
+
+  &:hover > span::before,
+  &:focus > span::before {
+    outline: 1px dotted $c-font;
+  }
+}
+
+.changer-active > span:nth-child(1),
+.changer-active > span:nth-child(2) {
+  background-color: $c-pink-3;
+
+  &::before {
+    outline: 1px dotted $c-font;
+  }
+}
+
+.theme-select {
+  @include dis_flex($f_dir: column, $align: stretch);
+  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+  z-index: 6;
+  position: absolute;
+  width: 100%;
+  top: 28px;
+  visibility: hidden;
+  transition: top 0.1s ease;
+
+  span {
+    @include buttons($l-height: 22px, $pad-tb: 7px, $t-align: left);
+    @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
+    position: relative;
+    padding-left: 16px;
+    margin: 10px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-top: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 1px;
+      background-color: $c-font;
+      bottom: 10px;
+      left: 10px;
+      transition: left 0.3s ease;
+      visibility: hidden;
+    }
+
+    &:hover::before {
+      left: 17px;
+      visibility: visible;
+    }
+
+    &:active,
+    &:hover {
+      @include bg_bder_shadow($c-gray-9, $c-pink-2, $c-gray-7, $c-white);
+    }
+  }
+}
+
+.theme-active {
+  top: 38px;
+  visibility: visible;
+}
