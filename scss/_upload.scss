@@ -91,11 +91,12 @@
 }
 
 .video-container {
-  display: flex;
+  display: none;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  margin-bottom: 50px;
   width: 50vw;
   height: auto;
   padding: 3px 4px;
@@ -142,6 +143,7 @@
     position: relative;
   }
 }
+
 .video-buttons {
   display: flex;
   justify-content: center;
@@ -203,5 +205,47 @@
       right: 3px;
       left: 3px;
     }
+  }
+}
+
+.stop-container {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 21px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  align-self: flex-end;
+  width: 100%;
+  position: relative;
+
+  .stop-timer {
+    @include bg_bder_shadow($c-white, $c-gray-3, $c-gray-6, $c-black);
+    font-size: 16px;
+    color: $c-font;
+    letter-spacing: 0;
+    line-height: 22px;
+    padding: 7px 13px 7px 21px;
+    position: absolute;
+    left: 25px;
+  }
+
+  .stop-span {
+    @include bg_bder_shadow($c-red-2, $c-font, $c-red-1, $c-white, -1px, 1px);
+    background-image: url("../assets/recording.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    padding: 18px;
+  }
+
+  .stop-btn {
+    @include bg_bder_shadow($c-red-2, $c-font, $c-red-1, $c-white, -1px, 1px);
+    color: $c-white;
+    font-size: 16px;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 18px;
+    padding: 9px 53px;
   }
 }

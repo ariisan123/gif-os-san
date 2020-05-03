@@ -947,10 +947,12 @@
       left: 3px; }
 
 .stop-container {
-  display: none;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -958,9 +960,7 @@
   margin-bottom: 16px;
   margin-right: 16px;
   -ms-flex-item-align: end;
-      align-self: flex-end;
-  width: 100%;
-  position: relative; }
+      align-self: flex-end; }
   .stop-container .stop-timer {
     background-color: #ffffff;
     border: 1px solid #979797;
@@ -969,30 +969,6 @@
     font-size: 16px;
     color: #110038;
     letter-spacing: 0;
-    line-height: 22px;
-    padding: 7px 13px 7px 21px;
-    position: absolute;
-    left: 25px; }
-  .stop-container .stop-span {
-    background-color: #ff6161;
-    border: 1px solid #110038;
-    -webkit-box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-            box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-    background-image: url("../assets/recording.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 20px;
-    padding: 18px; }
-  .stop-container .stop-btn {
-    background-color: #ff6161;
-    border: 1px solid #110038;
-    -webkit-box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-            box-shadow: inset -1px -1px 0 0 #993a3a, inset 1px 1px 0 0 #ffffff;
-    color: #ffffff;
-    font-size: 16px;
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 18px;
-    padding: 9px 53px; }
+    line-height: 22px; }
 
 /*# sourceMappingURL=styles.css.map */
