@@ -13,9 +13,10 @@ const video = document.querySelector(".video-up");
 
 const start = document.querySelector("#start-btn");
 const recordButton = document.querySelector(".video-buttons");
-const stopButton = document.querySelector(".stop-btn");
+const stopButton = document.querySelector(".stop-btn-div");
 const stopContainer = document.querySelector(".stop-container");
 const stopTimer = document.querySelector(".stop-timer");
+const finish = document.querySelector(".retry-upload");
 
 start.addEventListener("click", () => {
   let stream = navigator.mediaDevices.getUserMedia({
@@ -34,15 +35,30 @@ start.addEventListener("click", () => {
       type: "video",
       frameRate: "60",
       recorderType: MediaStreamRecorder,
-      width: 640,
-      height: 360,
+      width: 1280,
+      height: 720,
       quality: 10,
       timeSlice: 1000,
       onTimeStamp: function (time, timeArray) {
-        let duration = new Date().getTime() - timeArray[0] / 1000;
+        function twoDigits(number) {
+          if (number < 10) {
+            return `0${number}`;
+          } else {
+            return number;
+          }
+        }
 
-        if (duration < 0) return;
-        stopTimer.innerHTML = duration;
+        let minutes = 0;
+        let seconds = Math.round((time - timeArray[0]) / 1000);
+        while (seconds - 60 > -1) {
+          minutes++;
+          seconds = Math.round((time - timeArray[0]) / 1000) - 60 * minutes;
+        }
+
+        if (seconds < 0) return;
+        stopTimer.innerHTML = `00 : ${twoDigits(minutes)} : ${twoDigits(
+          seconds
+        )}`;
       },
     });
 
@@ -60,17 +76,11 @@ start.addEventListener("click", () => {
         video.src = URL.createObjectURL(blob);
         video.controls = true;
       });
+      stopButton.style.display = "none";
+      finish.style.display = "flex";
     });
   });
 
   document.querySelector(".new-gif").style.display = "none";
   document.querySelector(".video-container").style.display = "flex";
 });
-
-/* recordButton.addEventListener("click", () => {
-  let record = new RecordRTC(stream)
-
-  document.querySelector(".video-title").innerText = "Capturando Tu Guifo";
-  recordButton.style.display = "none";
-  stopContainer.style.display = "flex";
-}); */

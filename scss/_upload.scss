@@ -229,8 +229,13 @@
     position: absolute;
     left: 25px;
   }
+}
 
-  .stop-span {
+.stop-btn-div {
+  display: flex;
+  cursor: pointer;
+
+  > span {
     @include bg_bder_shadow($c-red-2, $c-font, $c-red-1, $c-white, -1px, 1px);
     background-image: url("../assets/recording.svg");
     background-repeat: no-repeat;
@@ -239,7 +244,7 @@
     padding: 18px;
   }
 
-  .stop-btn {
+  > button {
     @include bg_bder_shadow($c-red-2, $c-font, $c-red-1, $c-white, -1px, 1px);
     color: $c-white;
     font-size: 16px;
@@ -247,5 +252,25 @@
     text-align: center;
     line-height: 18px;
     padding: 9px 53px;
+    cursor: pointer;
+  }
+}
+
+.retry-upload {
+  display: none;
+  > button {
+    @include buttons();
+    cursor: pointer;
+  }
+
+  .retry {
+    @include bg_bder_shadow($c-gray-9, $c-font, $c-pink-1, $c-white);
+    padding: 9px 13px;
+  }
+
+  .upload {
+    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    padding: 9px 32px;
+    margin-left: 14px;
   }
 }
