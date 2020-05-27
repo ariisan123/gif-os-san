@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/upload.css" />
   </head>
 
   <body>
@@ -18,8 +18,74 @@
         de visitas: 12.765.803
       </h1>
       <nav class="navbar">
-        <a href="./index.html" id="go-back"></a>
-        <img src="./assets/gifOF_logo.png" alt="gifOF_logo" class="logo" />
+        <a href="./index.html" class="go-back">
+          <svg
+            width="24px"
+            height="26px"
+            viewBox="0 0 24 26"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <title>arrow</title>
+            <desc>Created with Sketch.</desc>
+            <defs>
+              <path
+                d="M80.3333333,88.6666667 L83,88.6666667 L83,91.3333333 L80.3333333,91.3333333 L80.3333333,94 L77.6666667,94 L77.6666667,91.3333333 C71.4444444,91.3333333 65.2222222,91.3333333 59,91.3333333 L59,88.6666667 C65.2222222,88.6666667 71.4444444,88.6666667 77.6666667,88.6666667 L77.6666667,86 L80.3333333,86 L80.3333333,88.6666667 Z M75,83.3333333 L77.6666667,83.3333333 L77.6666667,86 L75,86 L75,83.3333333 Z M72.3333333,80.6666667 L75,80.6666667 L75,83.3333333 L72.3333333,83.3333333 L72.3333333,80.6666667 Z M69.6666667,78 L72.3333333,78 L72.3333333,80.6666667 L69.6666667,80.6666667 L69.6666667,78 Z M75,96.6666667 L75,94 L77.6666667,94 L77.6666667,96.6666667 L75,96.6666667 Z M72.3333333,99.3333333 L72.3333333,96.6666667 L75,96.6666667 L75,99.3333333 L72.3333333,99.3333333 Z M69.6666667,102 L69.6666667,99.3333333 L72.3333333,99.3333333 L72.3333333,102 L69.6666667,102 Z"
+                id="path-1"
+              ></path>
+              <filter
+                x="-4.2%"
+                y="-4.2%"
+                width="108.3%"
+                height="116.7%"
+                filterUnits="objectBoundingBox"
+                id="filter-2"
+              >
+                <feOffset
+                  dx="0"
+                  dy="2"
+                  in="SourceAlpha"
+                  result="shadowOffsetOuter1"
+                ></feOffset>
+                <feColorMatrix
+                  values="0 0 0 0 0.96823281   0 0 0 0 0.78809464   0 0 0 0 0.952825725  0 0 0 1 0"
+                  type="matrix"
+                  in="shadowOffsetOuter1"
+                ></feColorMatrix>
+              </filter>
+            </defs>
+            <g
+              id="Page-1"
+              stroke="none"
+              stroke-width="1"
+              fill="none"
+              fill-rule="evenodd"
+            >
+              <g
+                id="gifOS_captura_7_exito"
+                transform="translate(-60.000000, -77.000000)"
+                fill-rule="nonzero"
+              >
+                <g id="nav-bar" transform="translate(1.000000, 1.000000)">
+                  <g
+                    id="arrow"
+                    transform="translate(71.000000, 90.000000) rotate(-180.000000) translate(-71.000000, -90.000000) "
+                  >
+                    <use
+                      fill="black"
+                      fill-opacity="1"
+                      filter="url(#filter-2)"
+                      xlink:href="#path-1"
+                    ></use>
+                    <use fill="#110038" xlink:href="#path-1"></use>
+                  </g>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <img alt="gifOF_logo" class="logo" />
       </nav>
     </header>
 
@@ -44,8 +110,8 @@
             >¿Quieres comenzar a crear tu <b>guifo</b> ahora?</span
           >
           <div class="buttons">
-            <button>Cancelar</button>
-            <button id="start-btn">Comenzar</button>
+            <button class="secondary-btn">Cancelar</button>
+            <button id="start-btn" class="primary-btn">Comenzar</button>
           </div>
         </div>
       </div>
@@ -53,28 +119,108 @@
 
     <section class="video-container">
       <span class="video-title">Un Checkeo Antes de Empezar</span>
-      <div class="video-div">
-        <video src="" class="video-up"></video>
-      </div>
-      <div class="video-buttons">
-        <span class="video-span"></span>
-        <button class="video-btn">Capturar</button>
-      </div>
-      <div class="stop-container">
-        <span class="stop-timer"></span>
 
-        <div class="stop-btn-div">
-          <span class="stop-span"></span>
-          <button class="stop-btn">Listo</button>
+      <div class="media-master">
+        <div class="media-div video-div">
+          <video src="" class="video-up"></video>
+
+          <div class="upload-container">
+            <img src="/assets/globe_img.png" alt="globe" />
+
+            <span>Estamos subiendo tu guifo...</span>
+            <div class="progress-bar">
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+              <span class="progress-up"></span>
+            </div>
+            <span>
+              Tiempo restante: <span class="years">38 años</span> algunos
+              minutos...
+            </span>
+          </div>
+        </div>
+
+        <div class="media-div gif-div">
+          <img src="" alt="myGuifo" class="gif-img" />
+        </div>
+
+        <div class="uploaded-buttons">
+          <span>Guifo creado con éxito</span>
+          <button class="copy-url secondary-btn">Copiar Enlace Guifo</button>
+          <button class="download-gif secondary-btn">Descargar Guifo</button>
+        </div>
+      </div>
+
+      <div class="master-buttons">
+        <div class="video-buttons">
+          <span class="video-span primary-btn"></span>
+          <button class="video-btn primary-btn">Capturar</button>
+        </div>
+
+        <span class="stop-timer"></span>
+        <div class="stop-container">
+          <div class="stop-btn-div">
+            <span class="stop-span"></span>
+            <button class="stop-btn">Listo</button>
+          </div>
         </div>
 
         <div class="retry-upload">
-          <button class="retry">Repetir Captura</button>
-          <button class="upload">Subir Guifo</button>
+          <div class="play-video">
+            <button class="play primary-btn"></button>
+
+            <div class="progress-bar">
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+              <span class="progress"></span>
+            </div>
+          </div>
+
+          <button class="retry secondary-btn">Repetir Captura</button>
+          <button class="upload primary-btn">Subir Guifo</button>
         </div>
+
+        <button class="cancel-btn secondary-btn">Cancelar</button>
+        <button class="finish-btn primary-btn">Listo</button>
       </div>
     </section>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+    <script src="./scripts/endpoints.js"></script>
     <script src="./scripts/functions.js"></script>
     <script src="./scripts/upload.js"></script>
   </body>

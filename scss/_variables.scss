@@ -1,39 +1,4 @@
-// Light Theme Colors
-$c-black: #000000;
-$c-white: #ffffff;
-$c-font: #110038;
-
-$c-pink-1: #997d97;
-$c-pink-2: #cca6c9;
-$c-pink-3: #e6bbe2;
-$c-pink-4: #f7c9f3;
-$c-pink-5: #80687d;
-
-$c-gray-1: #808080;
-$c-gray-2: #999999;
-$c-gray-3: #979797;
-$c-gray-4: #b4b4b4;
-$c-gray-5: #f0e5ee;
-$c-gray-6: #e6e6e6;
-$c-gray-7: #e6dce4;
-$c-gray-8: #f0f0f0;
-$c-gray-9: #fff4fd;
-$c-gray-10: #dbdbdb;
-$c-gray-11: #fffafe;
-
-$c-blue-1: #4c2f99;
-$c-blue-2: #284f99;
-$c-blue-3: #4180f6;
-$c-blue-4: #3a72db;
-
-$c-red-1: #993a3a;
-$c-red-2: #ff6161;
-
 $font: "Chakra Petch", sans-serif;
-
-$pt-gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-$secondary-theme-gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
-
 // Mixins
 
 @mixin bg_bder_shadow(
@@ -67,11 +32,13 @@ $secondary-theme-gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
   $pad-lr: 0,
   $f-size: 16px,
   $l-height: 18px,
-  $t-align: center
+  $t-align: center,
+  $weight: 500,
+  $color: var(--font)
 ) {
   font-size: $f-size;
-  font-weight: 500;
-  color: $c-font;
+  font-weight: $weight;
+  color: $color;
   letter-spacing: 0;
   text-align: $t-align;
   line-height: $l-height;

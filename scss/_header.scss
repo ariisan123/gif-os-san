@@ -1,25 +1,10 @@
 .h-title {
-  background-image: $pt-gradient;
-  box-shadow: 0 1px 0 0 $c-font;
+  background-image: var(--gradient);
+  box-shadow: 0 1px 0 0 var(--font-hover);
   font-weight: 400;
   font-size: 12px;
-  color: $c-white;
+  color: var(--white);
   letter-spacing: 0;
-}
-
-.navbar {
-  @include dis_flex($justify: flex-end);
-  position: relative;
-  margin-right: 9.8%;
-  margin-top: 3.2%;
-  margin-left: 6.3%;
-
-  > img {
-    position: absolute;
-    left: 0;
-    width: 102px;
-    height: 64px;
-  }
 }
 
 .navbar-div {
@@ -27,58 +12,38 @@
 
   > a:nth-of-type(1) {
     @include buttons(9px, 26.5px);
-    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
     text-decoration: none;
     margin-right: 16px;
-    position: relative;
-    transition: background 0.2s ease;
+  }
+}
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      right: 4px;
-      bottom: 4px;
-    }
+.my-gifos {
+  @include buttons(7px);
+  padding-right: 20px;
+  text-decoration: none;
+  position: relative;
 
-    &:hover {
-      background-color: $c-pink-3;
-    }
-
-    &:hover::before {
-      outline: 1px dotted $c-font;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    background-color: var(--font);
+    bottom: 7px;
+    left: 1px;
   }
 
-  > a:nth-of-type(2) {
-    @include buttons(7px);
-    padding-right: 20px;
-    text-decoration: none;
-    position: relative;
+  &:hover {
+    outline: 1px dotted var(--font);
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 1px;
-      background-color: $c-font;
-      bottom: 7px;
-      left: 1px;
-    }
+  &:active::before {
+    background-color: #9c8dab;
+  }
 
-    &:hover {
-      outline: 1px dotted $c-font;
-    }
-
-    &:active::before {
-      background-color: #9c8dab;
-    }
-
-    &:active {
-      outline: none;
-      color: #9c8dab;
-    }
+  &:active {
+    outline: none;
+    color: #9c8dab;
   }
 }
 
@@ -96,7 +61,12 @@
 
   > span:nth-of-type(1) {
     @include buttons(9px, 24px);
-    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    @include bg_bder_shadow(
+      var(--btn-fill),
+      var(--font-hover),
+      var(--bder-in-shadow),
+      var(--white)
+    );
     cursor: pointer;
     user-select: none;
     z-index: 10;
@@ -116,14 +86,16 @@
   }
 
   > span:nth-of-type(2) {
-    background: url(../assets/dropdown.svg) no-repeat center center;
-    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
-    width: 10px;
-    height: 6px;
-    padding: 18px 18px;
+    @include bg_bder_shadow(
+      var(--btn-fill),
+      var(--font-hover),
+      var(--bder-in-shadow),
+      var(--white)
+    );
+    display: flex;
+    padding: 15px 13px;
     position: relative;
     transition: background 0.2s ease;
-    pointer-events: none;
     z-index: 10;
 
     &::before {
@@ -134,74 +106,109 @@
       left: 4px;
       right: 4px;
     }
+
+    svg path:first-child {
+      fill: var(--dropdown-first);
+    }
+
+    svg path:last-child {
+      fill: var(--dropdown-second);
+    }
   }
 
   &:hover > span {
-    background-color: $c-pink-3;
+    background-color: var(--btn-fill-hover);
   }
 
   &:hover > span::before,
   &:focus > span::before {
-    outline: 1px dotted $c-font;
+    outline: 1px dotted var(--font-hover);
   }
 }
 
 .changer-active > span:nth-child(1),
 .changer-active > span:nth-child(2) {
-  background-color: $c-pink-3;
+  background-color: var(--btn-fill-hover);
 
   &::before {
-    outline: 1px dotted $c-font;
+    outline: 1px dotted var(--font-hover);
   }
 }
 
 .theme-select {
   @include dis_flex($f_dir: column, $align: stretch);
-  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
-  z-index: 6;
+  @include bg_shadow(var(--theme-fill), var(--theme-in-shadow), var(--white));
+  z-index: 15;
   position: absolute;
   width: 100%;
   top: 28px;
   visibility: hidden;
   transition: top 0.1s ease;
+}
 
-  span {
-    @include buttons($l-height: 22px, $pad-tb: 7px, $t-align: left);
-    @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
-    position: relative;
-    padding-left: 16px;
-    margin: 10px;
-    cursor: pointer;
+.theme-option {
+  @include buttons(
+    $l-height: 22px,
+    $pad-tb: 7px,
+    $t-align: left,
+    $color: var(--font-hover)
+  );
+  @include bg_bder_shadow(
+    var(--theme-link-fill),
+    var(--theme-link-bder),
+    var(--theme-link-in-shadow),
+    var(--white)
+  );
+  position: relative;
+  padding-left: 16px;
+  margin: 10px;
+  cursor: pointer;
 
-    &:last-child {
-      margin-top: 0;
-    }
+  &:last-child {
+    margin-top: 0;
+  }
 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 8px;
-      height: 1px;
-      background-color: $c-font;
-      bottom: 10px;
-      left: 10px;
-      transition: left 0.3s ease;
-      visibility: hidden;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    background-color: var(--font);
+    bottom: 10px;
+    left: 10px;
+    transition: left 0.3s ease;
+    visibility: hidden;
+  }
 
-    &:hover::before {
-      left: 17px;
-      visibility: visible;
-    }
+  &:hover::before {
+    left: 17px;
+    visibility: visible;
+  }
 
-    &:active,
-    &:hover {
-      @include bg_bder_shadow($c-gray-9, $c-pink-2, $c-gray-7, $c-white);
-    }
+  &:hover {
+    background-clip: padding-box;
+    color: var(--font);
+    @include bg_bder_shadow(
+      var(--theme-link-fill-hover),
+      var(--theme-link-bder-hover),
+      var(--theme-link-in-shadow-hover),
+      var(--white)
+    );
   }
 }
 
 .theme-active {
   top: 38px;
   visibility: visible;
+}
+
+.theme-enabled {
+  background-clip: padding-box;
+  color: var(--font);
+  @include bg_bder_shadow(
+    var(--theme-link-fill-hover),
+    var(--theme-link-bder-hover),
+    var(--theme-link-in-shadow-hover),
+    var(--white)
+  );
 }

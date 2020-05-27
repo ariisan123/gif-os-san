@@ -1,0 +1,121 @@
+body {
+  background-color: var(--background);
+
+  --background: #fff4fd;
+  --logo: url(../assets/gifOF_logo.png);
+  --camera: url(../assets/camera.svg);
+  --lens: url(../assets/lupa.svg);
+  --inactive-lens: url(../assets/lupa_inactive.svg);
+  --recording: url(../assets/recording.svg);
+
+  --dropdown-first: var(--font);
+  --dropdown-second: var(--white);
+
+  --gradient: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  --white: #ffffff;
+  --black: #000000;
+
+  --font: #110038;
+  --font-hover: #110038;
+
+  --btn-fill: #f7c9f3;
+  --btn-fill-hover: #e6bbe2;
+  --bder-in-shadow: #997d97;
+
+  --theme-fill: #e6e6e6;
+  --theme-in-shadow: #b4b4b4;
+
+  --theme-link-fill: #f0f0f0;
+  --theme-link-bder: #808080;
+  --theme-link-in-shadow: var(--theme-in-shadow);
+
+  --theme-link-fill-hover: #fff4fd;
+  --theme-link-bder-hover: #cca6c9;
+  --theme-link-in-shadow-hover: #e6dce4;
+
+  --section-title-bder: var(--btn-fill-hover);
+  --section-title-in-shadow: var(--theme-link-in-shadow-hover);
+  --section-title-sec-in-shadow: #80687d;
+
+  --search-bder: #979797;
+  --sug-link-in-shadow: #b4b4b4;
+  --sug-link-hover-fill: #dbdbdb;
+
+  --gif-in-shadow: #b4b4b4;
+  --gif-btn-fill: #4180f6;
+  --gif-btn-bder: #4c2f99;
+  --gif-btn-in-shadow: #284f99;
+  --gif-btn-fill-hover: #3a72db;
+  --gif-btn-in-shadow-hover: #284f99;
+
+  --stop-btn-fill: #ff6161;
+  --stop-btn-in-shadow: #993a3a;
+
+  --progress-in-shadow: var(--theme-fill);
+  --progress: #999999;
+
+  --secondary-btn-fill: #fff4fd;
+  --secondary-btn-bder: #110038;
+  --secondary-btn-in-shadow: #997d97;
+  --secondaty-btn-fill-hover: #f0e5ee;
+}
+
+.dark {
+  --background: #110038;
+  --logo: url(../assets/gifOF_logo_dark.png);
+  --camera: url(../assets/camera_light.svg);
+  --lens: url(../assets/lupa_light.svg);
+  --inactive-lens: url(../assets/lupa_inactive.svg);
+  --recording: url(../assets/recording_dark.svg);
+
+  --dropdown-first: var(--font);
+  --dropdown-second: var(--font-hover);
+
+  --gradient: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
+  --white: #ffffff;
+  --black: #000000;
+
+  --font: #ffffff;
+  --font-hover: #110038;
+
+  --btn-fill: #ee3efe;
+  --btn-fill-hover: #ce36db;
+  --bder-in-shadow: #a72cb3;
+
+  --theme-fill: #b4b4b4;
+  --theme-in-shadow: #8f8f8f;
+
+  --theme-link-fill: #cccccc;
+  --theme-link-bder: #808080;
+  --theme-link-in-shadow: var(--theme-fill);
+
+  --theme-link-fill-hover: #2e32fb;
+  --theme-link-bder-hover: rgba(51, 53, 143, 0.2);
+  --theme-link-in-shadow-hover: #e6dce4;
+
+  --section-title-bder: var(--gif-btn-fill);
+  --section-title-in-shadow: var(--theme-link-in-shadow-hover);
+  --section-title-sec-in-shadow: var(--font-hover);
+
+  --search-bder: #979797;
+  --sug-link-in-shadow: #b4b4b4;
+  --sug-link-fill-hover: #cccccc;
+
+  --gif-in-shadow: #5c5c5c;
+  --gif-btn-fill: #2e32fb;
+  --gif-btn-bder: #4c2f99;
+  --gif-btn-in-shadow: #2124b3;
+  --gif-btn-fill-hover: #2629cc;
+  --gif-btn-in-shadow-hover: #2124b3;
+
+  --stop-btn-fill: #ff6161;
+  --stop-btn-in-shadow: #993a3a;
+
+  --progress-in-shadow: #e6e6e6;
+  --progress: #999999;
+
+  --secondary-btn-fill: #110038;
+  --secondary-btn-bder: #b4b4b4;
+  --secondary-btn-in-shadow: #5c5c5c;
+  --secondary-btn-fill-hover: #110038;
+}

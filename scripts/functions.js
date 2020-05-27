@@ -11,23 +11,26 @@ function newElement(mainElementClass, newElementName, newElementClass) {
 }
 
 function capitalize(string) {
+  let stringReturn;
   if (string.indexOf(" ") >= 0) {
-    var element = string.toLowerCase().split(" ");
-    for (let i = 0; i < element.length; i++) {
+    stringReturn = string.toLowerCase().split(" ");
+    stringReturn.forEach((element, index) => {
+      stringReturn[index] = element.charAt(0).toUpperCase() + element.slice(1);
+    })
+    /* for (let i = 0; i < element.length; i++) {
       element[i] = element[i].charAt(0).toUpperCase() + element[i].slice(1);
-    }
-    element = element.join(" ");
+    } */
+    stringReturn = stringReturn.join(" ");
   } else if (string.length >= 2) {
-    var element = string.charAt(0).toUpperCase() + string.slice(1);
+    stringReturn = string.charAt(0).toUpperCase() + string.slice(1);
   } else {
-    var element = "String vacia";
+    stringReturn = "String vacia";
   }
-  return element;
+  return stringReturn;
 }
 
 function removeGifBy(title) {
   let tag = title.toLowerCase().split(" ");
-
   let gifIndex = tag.indexOf("gif");
 
   while (gifIndex >= 0) {
@@ -49,9 +52,9 @@ function removeGifBy(title) {
 function addHashtag(string) {
   let stringArray = string.split(" ");
 
-  for (let i = 0; i < stringArray.length; i++) {
-    stringArray[i] = `#${stringArray[i]}`;
-  }
+  stringArray.forEach((element, index) => {
+    stringArray[index] = `#${element}`;
+  })
 
   stringArray = stringArray.join(" ");
   return stringArray;
@@ -65,78 +68,99 @@ function addBefore(parent, child, newChild, newChildClass) {
   parentNode.insertBefore(newChildTag, parentChild);
 }
 
-function searchElement(element) {
-  const apiKey = "SHG6tML92fdVMBeKXAMm4NhdLs0qCXyS";
-
-  let searchGif = document.querySelectorAll(".search-gif");
-  let searchImg = document.querySelectorAll(".search-img");
-  let searchTag = document.querySelectorAll(".search-tag");
-  if (searchGif.length > 0) {
-    searchImg.forEach((element) => {
-      element.parentNode.removeChild(element);
-    });
-
-    searchTag.forEach((element) => {
-      element.parentNode.removeChild(element);
-    });
-
-    searchGif.forEach((element) => {
-      element.parentNode.removeChild(element);
-    });
+function getLocalStorage(key) {
+  if (localStorage.getItem(key)) {
+    return JSON.parse(localStorage.getItem(key))
   }
-
-  fetch(
-    "http://api.giphy.com/v1/gifs/search?q=" +
-      element +
-      "&limit=25&api_key=" +
-      apiKey +
-      "&rating=G"
-  )
-    .then((response) => response.json())
-
-    .then((data) => {
-      console.log(data);
-      let gifData = {
-        src: [],
-        tag: [],
-      };
-
-      for (let i = 0; i < 25; i++) {
-        gifData.src.push(data.data[i].images.fixed_height.url);
-        gifData.tag.push(capitalize(removeGifBy(data.data[i].title)));
-
-        newElement(".gif-search-container", "div", "search-gif");
-        newElement(".search-gif", "img", "search-img");
-        newElement(".search-gif", "span", "search-tag");
-      }
-
-      searchImg = document.querySelectorAll(".search-img");
-      searchTag = document.querySelectorAll(".search-tag");
-
-      for (let i = 0; i < 25; i++) {
-        searchImg[i].src = gifData.src[i];
-        searchTag[i].innerText = addHashtag(gifData.tag[i]);
-      }
-    })
-    .catch((error) => {
-      return error;
-    });
 }
 
-/* function sugTagSearch(value, tagsReturned) {
-    fetch(
-      `https://api.giphy.com/v1/tags/related/{${value}}?api_key=SHG6tML92fdVMBeKXAMm4NhdLs0qCXyS`
-    )
-      .then((response) => response.json())
-  
-      .then((data) => {
-        data.data.forEach((element) => {
-          tagsReturned.push(element.name);
-        });
-        return tagsReturned;
+function setLocalStorage(key, variable) {
+  localStorage.setItem(key, JSON.stringify(variable))
+}
+
+function getStorageGifs(key) {
+  let gifs = []
+  if (getLocalStorage(key)) {
+    gifs = getLocalStorage(key);
+    console.log(gifs);
+    return gifs;
+  } else {
+    return gifs
+  }
+}
+
+function setStorageGif(array, object) {
+  let gifsArray = array;
+  object.id = gifId;
+  object.url = getGifUrl(gifId);
+  object.embed = getEmbedGif(gifId);
+  gifsArray.push(object)
+  localStorage.setItem('gifs', JSON.stringify(gifsArray));
+}
+
+function verifyTheme() {
+  if (getLocalStorage('theme') == true) {
+    document.querySelector('body').className = 'dark';
+    console.log('tema oscuro');
+    return true
+  } else {
+    setLocalStorage('theme', false)
+    console.log('tema claro');
+    return false
+  }
+}
+
+function changeTheme(lightTheme, darkTheme) {
+  if (getLocalStorage('theme') == false) {
+    lightTheme.classList.remove('theme-enabled');
+    darkTheme.classList.add('theme-enabled');
+    document.querySelector('body').className = 'dark';
+    setLocalStorage('theme', true);
+  } else {
+    document.querySelector('body').removeAttribute('class');
+    darkTheme.classList.remove('theme-enabled');
+    lightTheme.classList.add('theme-enabled');
+    setLocalStorage('theme', false);
+  }
+}
+
+function twoDigits(number) {
+  if (number < 10) {
+    return `0${number}`;
+  } else {
+    return number;
+  }
+}
+
+function getGifUrl(id) {
+  let url = `https://giphy.com/gifs/${id}`;
+  return url;
+}
+
+function getEmbedGif(id) {
+  let url = `https://media.giphy.com/media/${id}/giphy.gif`;
+  return url;
+}
+
+function uploadBarAnimation(counter) {
+  return setInterval(() => {
+    if (counter <= 22) {
+      uploadProgress[counter].classList.add('progress-fill')
+      counter++;
+    } else {
+      uploadProgress.forEach(element => {
+        element.classList.remove('progress-fill')
       })
-  
-      .catch((error) => {
-        console.log(error);
-      });
-  } */
+      counter = 0;
+    }
+  }, 70);
+}
+
+function stopBarAnimation(id) {
+  clearInterval(id)
+}
+
+function newDate(array) {
+  let date = new Date();
+  array.push(date.getTime())
+}

@@ -1,0 +1,153 @@
+.primary-btn {
+  position: relative;
+  cursor: pointer;
+  @include bg_bder_shadow(
+    var(--btn-fill),
+    var(--font-hover),
+    var(--bder-in-shadow),
+    var(--white)
+  );
+  transition: background-color 0.2s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    right: 3px;
+  }
+
+  &:hover {
+    background-color: var(--btn-fill-hover);
+  }
+
+  &:hover::before {
+    outline: 1px dotted var(--font-hover);
+  }
+}
+
+.secondary-btn {
+  position: relative;
+  cursor: pointer;
+  @include bg_bder_shadow(
+    var(--secondary-btn-fill),
+    var(--font-hover),
+    var(--secondary-btn-in-shadow),
+    var(--white)
+  );
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    right: 3px;
+    left: 3px;
+  }
+
+  &:hover {
+    background-color: var(--secondary-btn-fill-hover);
+  }
+
+  &:hover::before {
+    outline: 1px dotted var(--font);
+  }
+}
+
+.h-title {
+  background-image: var(--gradient);
+  box-shadow: 0 1px 0 0 var(--font-hover);
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--white);
+  letter-spacing: 0;
+}
+
+.navbar {
+  @include dis_flex($justify: flex-end);
+  position: relative;
+  margin-right: 9.8%;
+  margin-top: 3.2%;
+  margin-left: 6.3%;
+
+  img {
+    content: var(--logo);
+  }
+}
+
+.logo {
+  position: absolute;
+  left: 0;
+}
+
+.go-back {
+  width: 24px;
+  height: 26px;
+  position: absolute;
+  left: -31px;
+
+  svg use {
+    fill: var(--font);
+  }
+}
+
+.trend-gif,
+.search-gif,
+.my-gif {
+  @include dis_flex($f_dir: column);
+  position: relative;
+  height: 298px;
+  padding: 3px;
+
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px;
+    z-index: 10;
+    outline: 1px dotted transparent;
+    transition: outline 0.2s ease;
+  }
+
+  img {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 0;
+    padding: 3px;
+    background-image: var(--gradient);
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    width: calc(100% - 6px);
+    bottom: -5px;
+
+    visibility: hidden;
+    transition: all 0.1s ease-in;
+  }
+
+  &:hover {
+    @include bg_shadow(var(--theme-fill), var(--gif-in-shadow), var(--white));
+  }
+
+  &:hover::before {
+    outline: 1px dotted var(--font-hover);
+  }
+
+  &:hover span {
+    visibility: visible;
+    bottom: 3px;
+  }
+}

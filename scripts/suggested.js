@@ -1,45 +1,22 @@
-let gifData = {
-    url: [],
-    title: [],
-    src: []
-}
 
 for (let i = 0; i < 4; i++) {
-    fetch('https://api.giphy.com/v1/gifs/random?api_key=SHG6tML92fdVMBeKXAMm4NhdLs0qCXyS&rating=G')
-
-        .then(response => response.json())
-
+    getData(endpoints.random)
         .then(data => {
-
-            gifData.url.push(data.data.url);
-            gifData.title.push(capitalize(data.data.username));
-            gifData.src.push(data.data.images.downsized_medium.url);
-
             newElement('.suggested-container', 'div', 'sug-gif');
             newElement('.sug-gif', 'span', 'sug-gif-title');
             newElement('.sug-gif', 'img', 'sug-img');
             newElement('.sug-gif', 'a', 'sug-link');
+
+            let title = document.querySelectorAll('.sug-gif-title');
+            let img = document.querySelectorAll('.sug-img');
+            let link = document.querySelectorAll('.sug-link');
+
+            title[title.length - 1].innerText = addHashtag(capitalize((removeGifBy(data.title))));
+            //img[img.length - 1].src = data.images.downsized_medium.url;
+            img[img.length - 1].src = data.fixed_height_small_url;
+            link[link.length - 1].href = data.url;
+            link[link.length - 1].target = '_blank';
+            link[link.length - 1].innerText = 'Ver mas...';
         })
-
-        .then(() => {
-
-            setTimeout(() => {
-                let sugGifTitle = document.querySelectorAll('.sug-gif-title');
-                sugGifTitle[i].innerHTML = '#' + gifData.title[i];
-
-                let sugImg = document.querySelectorAll('.sug-img');
-                sugImg[i].setAttribute('loading', 'lazy')
-                sugImg[i].src = gifData.src[i];
-
-                let sugGifButton = document.querySelectorAll('.sug-link');
-                sugGifButton[i].innerHTML = 'Ver mas...';
-                sugGifButton[i].target = '_blank';
-                sugGifButton[i].href = gifData.url[i];
-            }, 50)
-        })
-
-        .catch(error => {
-            console.log(error)
-        });
-
+        .catch(err => console.log(err))
 }

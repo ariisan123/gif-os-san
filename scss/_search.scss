@@ -7,17 +7,17 @@
 .search-main {
   margin-top: 3.3%;
   padding: 3px;
-  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+  @include bg_shadow(var(--theme-fill), var(--theme-in-shadow), var(--white));
   position: relative;
-  z-index: 5;
+  z-index: 13;
 
   > h3 {
     padding-left: 3px;
     font-size: 14px;
     font-weight: 600;
-    color: $c-white;
+    color: var(--white);
     letter-spacing: 0;
-    background-image: $pt-gradient;
+    background-image: var(--gradient);
   }
 }
 
@@ -29,10 +29,10 @@
 
   > input {
     @include bg_bder_shadow(
-      $c-white,
-      $c-gray-3,
-      $c-gray-6,
-      $c-black,
+      var(--white),
+      var(--search-bder),
+      var(--theme-fill),
+      var(--black),
       -2px,
       2px
     );
@@ -41,49 +41,61 @@
     padding-left: 16px;
     margin-right: 8px;
 
-    font-family: $font;
     font-size: 16px;
-    color: $c-font;
+    color: var(--font-hover);
     letter-spacing: 0;
     line-height: 22px;
     font-weight: 500;
+
+    &::placeholder {
+      color: var(--sug-link-in-shadow);
+    }
   }
 
   > button {
     @include dis_flex;
     @include buttons(9px, 0, 16px, 18px);
-    @include bg_bder_shadow($c-pink-4, $c-font, $c-pink-1, $c-white);
+    @include bg_bder_shadow(
+      var(--btn-fill),
+      var(--font-hover),
+      var(--bder-in-shadow),
+      var(--white)
+    );
     position: relative;
     padding-right: 14px;
     padding-left: 36px;
-    background-image: url("../assets/lupa.svg");
+    background-image: var(--lens);
     background-repeat: no-repeat;
     background-position: 10px;
     cursor: pointer;
     transition: background-color 0.2s ease;
 
-    &:hover {
-      background-color: $c-pink-3;
+    &:hover:enabled {
+      background-color: var(--btn-fill-hover);
     }
 
-    &::before {
+    &:enabled::before {
       content: "";
       position: absolute;
-      top: 4px;
-      bottom: 4px;
-      left: 4px;
-      right: 4px;
-      outline: 1px solid $c-pink-4;
+      top: 3px;
+      bottom: 3px;
+      left: 3px;
+      right: 3px;
     }
 
-    &:hover::before {
-      outline: 1px dotted $c-font;
+    &:hover:enabled::before {
+      outline: 1px dotted var(--font-hover);
     }
 
     &:disabled {
-      color: $c-gray-4;
-      @include bg_bder_shadow($c-gray-6, $c-gray-1, $c-gray-4, $c-white);
-      background-image: url("../assets/lupa_inactive.svg");
+      color: var(--theme-in-shadow);
+      @include bg_bder_shadow(
+        var(--theme-fill),
+        var(--theme-link-bder),
+        var(--theme-in-shadow),
+        var(--white)
+      );
+      background-image: var(--inactive-lens);
       background-repeat: no-repeat;
       background-position: 10px;
     }
@@ -92,9 +104,9 @@
 
 .search-options {
   @include dis_flex($f_dir: column, $align: left);
-  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+  @include bg_shadow(var(--theme-fill), var(--theme-in-shadow), var(--white));
   padding: 6px 0 16px 15px;
-  z-index: 3;
+  z-index: 12;
   position: absolute;
   width: 100%;
   top: 20px;
@@ -103,8 +115,13 @@
   transition: top 0.1s ease;
 
   span {
-    @include buttons(7px, 0, 16px, 22px, left);
-    @include bg_bder_shadow($c-gray-8, $c-gray-1, $c-gray-4, $c-white);
+    @include buttons(7px, 0, 16px, 22px, left, $color: var(--font-hover));
+    @include bg_bder_shadow(
+      var(--theme-link-fill),
+      var(--theme-link-bder),
+      var(--theme-in-shadow),
+      var(--white)
+    );
     padding-left: 16px;
     margin-top: 10px;
     width: calc(100% - 130px);
@@ -119,15 +136,20 @@
       bottom: 4px;
       left: 4px;
       right: 4px;
-      outline: 1px solid $c-gray-8;
+      outline: 1px solid var(--theme-link-fill);
     }
 
     &:hover {
-      @include bg_bder_shadow($c-gray-10, $c-gray-1, $c-gray-4, $c-white);
+      @include bg_bder_shadow(
+        var(--theme-link-bder) 0,
+        var(--theme-link-bder),
+        var(--theme-in-shadow),
+        var(--white)
+      );
     }
 
     &:hover::before {
-      outline: 1px dotted $c-font;
+      outline: 1px dotted var(--font-hover);
     }
   }
 }
@@ -142,14 +164,20 @@
   display: inline-block;
   margin-top: 12px;
   margin-right: 8px;
-  font-family: $font;
   font-size: 14px;
-  color: $c-white;
+  color: var(--white);
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
   padding: 8px 10px;
-  @include bg_bder_shadow($c-blue-3, $c-blue-1, $c-blue-2, $c-white, -2px, 2px);
+  @include bg_bder_shadow(
+    var(--gif-btn-fill),
+    var(--gif-btn-bder),
+    var(--gif-btn-in-shadow),
+    var(--white),
+    -2px,
+    2px
+  );
   cursor: pointer;
   transition: background 0.2s ease;
 
@@ -164,31 +192,31 @@
 
   &:hover {
     @include bg_bder_shadow(
-      $c-blue-4,
-      $c-blue-1,
-      $c-blue-2,
-      $c-white,
+      var(--gif-btn-fill-hover),
+      var(--gif-btn-bder),
+      var(--gif-btn-in-shadow),
+      var(--white),
       -2px,
       2px
     );
   }
 
   &:hover::before {
-    outline: 1px dotted $c-font;
+    outline: 1px dotted var(--font-hover);
   }
 }
 
 .search-title {
   font-size: 14px;
-  color: $c-font;
+  color: var(--font-hover);
   letter-spacing: 0;
   padding: 7px;
   font-weight: 500;
   @include bg_bder_shadow(
-    $c-gray-11,
-    $c-pink-3,
-    $c-gray-7,
-    $c-pink-5,
+    var(--white),
+    var(--section-title-bder),
+    var(--section-title-in-shadow),
+    var(--section-title-sec-in-shadow),
     -2px,
     2px
   );

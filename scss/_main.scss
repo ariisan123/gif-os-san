@@ -5,15 +5,15 @@
 
 .sug-title {
   font-size: 14px;
-  color: $c-font;
+  color: var(--font-hover);
   letter-spacing: 0;
   padding: 7px;
   font-weight: 500;
   @include bg_bder_shadow(
-    $c-gray-11,
-    $c-pink-3,
-    $c-gray-7,
-    $c-pink-5,
+    var(--white),
+    var(--section-title-bder),
+    var(--section-title-in-shadow),
+    var(--section-title-sec-in-shadow),
     -2px,
     2px
   );
@@ -23,29 +23,26 @@
 
 .suggested-container,
 .trends-container,
-.gif-search-container {
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: space-between;
-  align-items: center;
+.gif-search-container,
+.mygif-container {
+  @include dis_flex(space-between, center, row, wrap);
 }
 
 .sug-gif {
   @include dis_flex($f_dir: column);
-  @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
+  @include bg_shadow(var(--theme-fill), var(--gif-in-shadow), var(--white));
   height: 313px;
   width: 24%;
   padding: 3px 4px;
   position: relative;
 
   span {
-    font-family: $font;
     font-size: 14px;
     font-weight: bold;
-    color: $c-white;
+    color: var(--white);
     letter-spacing: 0;
     padding: 3px;
-    background-image: $pt-gradient;
+    background-image: var(--gradient);
     width: 100%;
     position: relative;
     display: flex;
@@ -63,7 +60,6 @@
   }
 
   img {
-    border: 1px solid $c-gray-6;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -71,7 +67,7 @@
   }
 
   &:hover img {
-    border: 1px dotted $c-font;
+    outline: 1px dotted var(--font-hover);
   }
 
   .sug-link {
@@ -80,18 +76,17 @@
     left: 11px;
     text-decoration: none;
 
-    font-family: $font;
     font-size: 14px;
-    color: $c-white;
+    color: var(--white);
     letter-spacing: 0;
     text-align: center;
     line-height: 18px;
     padding: 8px 10px;
     @include bg_bder_shadow(
-      $c-blue-3,
-      $c-blue-1,
-      $c-blue-2,
-      $c-white,
+      var(--gif-btn-fill),
+      var(--gif-btn-bder),
+      var(--gif-btn-in-shadow),
+      var(--white),
       -2px,
       2px
     );
@@ -109,78 +104,17 @@
 
     &:hover {
       @include bg_bder_shadow(
-        $c-blue-4,
-        $c-blue-1,
-        $c-blue-2,
-        $c-white,
+        var(--gif-btn-fill-hover),
+        var(--gif-btn-bder),
+        var(--gif-btn-in-shadow),
+        var(--white),
         -2px,
         2px
       );
     }
 
     &:hover::before {
-      outline: 1px dotted $c-font;
+      outline: 1px dotted var(--font-hover);
     }
-  }
-}
-
-.trend-gif,
-.search-gif {
-  @include dis_flex($f_dir: column);
-  position: relative;
-  height: 298px;
-  padding: 3px;
-  flex: 1 1 1;
-
-  overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    bottom: 3px;
-    right: 3px;
-    left: 3px;
-    outline: 1px dotted transparent;
-    z-index: 10;
-    transition: outline 0.2s ease;
-  }
-
-  img {
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-  }
-
-  span {
-    font-family: $font;
-    font-size: 14px;
-    font-weight: bold;
-    color: $c-white;
-    letter-spacing: 0;
-    padding: 3px;
-    background-image: $pt-gradient;
-    display: flex;
-    align-items: center;
-
-    position: absolute;
-    width: calc(100% - 6px);
-    bottom: -5px;
-
-    visibility: hidden;
-    transition: all 0.1s ease-in;
-  }
-
-  &:hover {
-    @include bg_shadow($c-gray-6, $c-gray-4, $c-white);
-  }
-
-  &:hover::before {
-    outline: 1px dotted $c-font;
-  }
-
-  &:hover span {
-    visibility: visible;
-    bottom: 3px;
   }
 }
