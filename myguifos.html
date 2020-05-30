@@ -3,21 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Guifos</title>
+
     <script src="./scripts/functions.js"></script>
     <script src="./scripts/theme.js"></script>
 
-    <title>GIF OS</title>
-
-    <!-- FONT -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="./css/mygifos.css" type="text/css" />
   </head>
-
   <body>
     <header>
       <h1 class="h-title">
@@ -82,7 +74,7 @@
             </div>
 
             <div class="theme-select">
-              <span id="light-theme" class="theme-option">Sailor Day</span>
+              <span id="light-theme" class="theme-optio">Sailor Day</span>
               <span id="dark-theme" class="theme-option">Sailor Night</span>
             </div>
           </div>
@@ -92,51 +84,12 @@
       </nav>
     </header>
 
-    <section class="search-section">
-      <div class="search-main">
-        <h3>Buscar</h3>
-
-        <div class="search-container">
-          <input
-            type="text"
-            id="inp-search"
-            placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"
-          />
-          <button type="button" id="search-bttn" class="primary-btn" disabled>
-            Buscar
-          </button>
-        </div>
-      </div>
-
-      <div class="search-options">
-        <span class="search-option">Resultado de búsqueda sugerido</span>
-        <span class="search-option">Un resultado similar de búsqueda</span>
-        <span class="search-option">Y otro más</span>
-        <span class="search-option">Y otro más</span>
-        <span class="search-option">Y otro más</span>
-      </div>
-
-      <h3 class="search-title">Resultados de</h3>
-      <!--  <span class="gif-search-tag gif-link"> batman</span> -->
-
-      <div class="gif-search-container"></div>
-    </section>
-
     <section class="main">
-      <h3 class="sug-title">Hoy te sugerimos:</h3>
-
-      <div class="suggested-container"></div>
-
-      <h3 class="sug-title">Tendencias:</h3>
-
-      <div class="trends-container"></div>
+      <h3 class="sug-title">Mis guifos</h3>
+      <div class="mygif-container"></div>
     </section>
-
-    <script src="./scripts/endpoints.js"></script>
 
     <script src="./scripts/navbar.js"></script>
-    <script src="./scripts/search.js"></script>
-    <script src="./scripts/suggested.js"></script>
-    <script src="./scripts/trend.js"></script>
+    <script src="./scripts/mygifos.js"></script>
   </body>
 </html>

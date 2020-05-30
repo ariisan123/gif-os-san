@@ -1,27 +1,46 @@
-$primary-theme-gradient:  linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-$secondary-theme-gradient: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
-$font: 'Chakra Petch', sans-serif;
-
+$font: "Chakra Petch", sans-serif;
 // Mixins
 
-@mixin dis_flex($wrap: nowrap, $f_dir: row, $justify: center, $align: center){
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $f_dir;
-    flex-wrap: $wrap;
+@mixin bg_bder_shadow(
+  $background,
+  $border,
+  $f-shadow,
+  $s-shadow,
+  $px: -1px,
+  $px2: 1px
+) {
+  background-color: $background;
+  border: 1px solid $border;
+  box-shadow: inset $px $px 0 0 $f-shadow, inset $px2 $px2 0 0 $s-shadow;
 }
 
-@mixin buttons($pad-tb:0, $pad-lr: 0,$f-size: 16px) {
-    background: #F7C9F3;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-    font-family: $font;
-    font-size: $f-size;
-    font-weight: 500;
-    color: #110038;
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 18px;
-    padding: $pad-tb $pad-lr;
+@mixin bg_shadow($background, $f-shadow, $s-shadow) {
+  background-color: $background;
+  box-shadow: inset -2px -2px 0 0 $f-shadow, inset 2px 2px 0 0 $s-shadow;
+}
+
+@mixin dis_flex($justify: center, $align: center, $f_dir: row, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $f_dir;
+  flex-wrap: $wrap;
+}
+
+@mixin buttons(
+  $pad-tb: 0,
+  $pad-lr: 0,
+  $f-size: 16px,
+  $l-height: 18px,
+  $t-align: center,
+  $weight: 500,
+  $color: var(--font)
+) {
+  font-size: $f-size;
+  font-weight: $weight;
+  color: $color;
+  letter-spacing: 0;
+  text-align: $t-align;
+  line-height: $l-height;
+  padding: $pad-tb $pad-lr;
 }
