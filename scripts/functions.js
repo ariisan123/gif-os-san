@@ -106,23 +106,19 @@ function verifyTheme() {
   } else {
     setLocalStorage('theme', false)
     console.log('tema claro');
+    document.querySelector('body').className = 'light';
     return false
   }
 }
 
-function changeTheme(lightTheme, darkTheme) {
-  if (getLocalStorage('theme') == false) {
-    lightTheme.classList.remove('theme-enabled');
-    darkTheme.classList.add('theme-enabled');
-    document.querySelector('body').className = 'dark';
-    setLocalStorage('theme', true);
-  } else {
-    document.querySelector('body').removeAttribute('class');
-    darkTheme.classList.remove('theme-enabled');
-    lightTheme.classList.add('theme-enabled');
-    setLocalStorage('theme', false);
+function changeTheme(bool, newTheme, oldTheme) {
+  if (getLocalStorage('theme') == bool) {
+    newTheme.classList.add('theme-enabled');
+    oldTheme.classList.remove('theme-enabled');
+    setLocalStorage('theme', !bool)
   }
 }
+
 
 function twoDigits(number) {
   if (number < 10) {

@@ -55,12 +55,7 @@
   > button {
     @include dis_flex;
     @include buttons(9px, 0, 16px, 18px);
-    @include bg_bder_shadow(
-      var(--btn-fill),
-      var(--font-hover),
-      var(--bder-in-shadow),
-      var(--white)
-    );
+
     position: relative;
     padding-right: 14px;
     padding-left: 36px;
@@ -69,23 +64,6 @@
     background-position: 10px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-
-    &:hover:enabled {
-      background-color: var(--btn-fill-hover);
-    }
-
-    &:enabled::before {
-      content: "";
-      position: absolute;
-      top: 3px;
-      bottom: 3px;
-      left: 3px;
-      right: 3px;
-    }
-
-    &:hover:enabled::before {
-      outline: 1px dotted var(--font-hover);
-    }
 
     &:disabled {
       color: var(--theme-in-shadow);
@@ -164,46 +142,6 @@
   display: inline-block;
   margin-top: 12px;
   margin-right: 8px;
-  font-size: 14px;
-  color: var(--white);
-  letter-spacing: 0;
-  text-align: center;
-  line-height: 18px;
-  padding: 8px 10px;
-  @include bg_bder_shadow(
-    var(--gif-btn-fill),
-    var(--gif-btn-bder),
-    var(--gif-btn-in-shadow),
-    var(--white),
-    -2px,
-    2px
-  );
-  cursor: pointer;
-  transition: background 0.2s ease;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 4px;
-    bottom: 4px;
-    right: 4px;
-    left: 4px;
-  }
-
-  &:hover {
-    @include bg_bder_shadow(
-      var(--gif-btn-fill-hover),
-      var(--gif-btn-bder),
-      var(--gif-btn-in-shadow),
-      var(--white),
-      -2px,
-      2px
-    );
-  }
-
-  &:hover::before {
-    outline: 1px dotted var(--font-hover);
-  }
 }
 
 .search-title {

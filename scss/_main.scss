@@ -69,52 +69,11 @@
   &:hover img {
     outline: 1px dotted var(--font-hover);
   }
+}
 
-  .sug-link {
-    position: absolute;
-    bottom: 19px;
-    left: 11px;
-    text-decoration: none;
-
-    font-size: 14px;
-    color: var(--white);
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 18px;
-    padding: 8px 10px;
-    @include bg_bder_shadow(
-      var(--gif-btn-fill),
-      var(--gif-btn-bder),
-      var(--gif-btn-in-shadow),
-      var(--white),
-      -2px,
-      2px
-    );
-    cursor: pointer;
-    transition: background 0.2s ease;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      bottom: 4px;
-      right: 4px;
-      left: 4px;
-    }
-
-    &:hover {
-      @include bg_bder_shadow(
-        var(--gif-btn-fill-hover),
-        var(--gif-btn-bder),
-        var(--gif-btn-in-shadow),
-        var(--white),
-        -2px,
-        2px
-      );
-    }
-
-    &:hover::before {
-      outline: 1px dotted var(--font-hover);
-    }
-  }
+.sug-link {
+  position: absolute;
+  bottom: 19px;
+  left: 11px;
+  text-decoration: none;
 }

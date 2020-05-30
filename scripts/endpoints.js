@@ -57,3 +57,37 @@ async function getData(endpoint, string = null) {
     }
   }
 }
+
+function searchGifs(searchValue) {
+  getData(endpoints.search, searchValue)
+    .then(data => {
+      data.forEach((element, index) => {
+        newElement(".gif-search-container", 'div', 'search-gif');
+        newElement('.search-gif', 'img', 'search-img');
+        newElement('.search-gif', 'span', 'search-tags');
+
+        document.querySelectorAll('.search-img')[index].src = element.images.fixed_height.url;
+        document.querySelectorAll('.search-tags')[index].innerText = addHashtag(capitalize(removeGifBy(element.title)));
+      })
+    })
+    .catch(err => console.log(err));
+}
+
+function searchSuggestions(searchValue, callback) {
+  getData(endpoints.suggestions(searchValue))
+    .then(data => {
+      if (document.querySelectorAll('.gif-search-tag').length > 0) {
+        document.querySelectorAll('.gif-search-tag').forEach(element => element.remove())
+      }
+
+      data.forEach((element, index) => {
+        addBefore('.search-section', '.search-title', 'span', 'gif-search-tag gif-link')
+        document.querySelectorAll('.gif-search-tag')[index].innerText = element.name;
+      })
+
+      callback()
+
+    })
+    .catch(err => console.log(err));
+}
+

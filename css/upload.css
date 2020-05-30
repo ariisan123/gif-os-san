@@ -1,4 +1,4 @@
-body {
+.light {
   background-color: var(--background);
   --background: #fff4fd;
   --logo: url(../assets/gifOF_logo.png);
@@ -46,11 +46,12 @@ body {
   --secondaty-btn-fill-hover: #f0e5ee; }
 
 .dark {
+  background-color: var(--background);
   --background: #110038;
   --logo: url(../assets/gifOF_logo_dark.png);
   --camera: url(../assets/camera_light.svg);
   --lens: url(../assets/lupa_light.svg);
-  --inactive-lens: url(../assets/lupa_inactive.svg);
+  --inactive-lens: url(../assets/lupa_inactive_light.svg);
   --recording: url(../assets/recording_dark.svg);
   --dropdown-first: var(--font);
   --dropdown-second: var(--font-hover);
@@ -118,6 +119,8 @@ body {
     background-color: var(--btn-fill-hover); }
   .primary-btn:hover::before {
     outline: 1px dotted var(--font-hover); }
+  .primary-btn:hover:disabled::before {
+    outline: none; }
 
 .secondary-btn {
   position: relative;
@@ -259,6 +262,39 @@ body {
   .my-gif:hover span {
     visibility: visible;
     bottom: 3px; }
+
+.gif-link {
+  /*  position: absolute;
+  bottom: 19px;
+  left: 11px;
+  text-decoration: none; */
+  font-size: 14px;
+  color: var(--white);
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+  padding: 8px 10px;
+  background-color: var(--gif-btn-fill);
+  border: 1px solid var(--gif-btn-bder);
+  -webkit-box-shadow: inset -2px -2px 0 0 var(--gif-btn-in-shadow), inset 2px 2px 0 0 var(--white);
+          box-shadow: inset -2px -2px 0 0 var(--gif-btn-in-shadow), inset 2px 2px 0 0 var(--white);
+  cursor: pointer;
+  -webkit-transition: background 0.2s ease;
+  transition: background 0.2s ease; }
+  .gif-link::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    right: 4px;
+    left: 4px; }
+  .gif-link:hover {
+    background-color: var(--gif-btn-fill-hover);
+    border: 1px solid var(--gif-btn-bder);
+    -webkit-box-shadow: inset -2px -2px 0 0 var(--gif-btn-in-shadow), inset 2px 2px 0 0 var(--white);
+            box-shadow: inset -2px -2px 0 0 var(--gif-btn-in-shadow), inset 2px 2px 0 0 var(--white); }
+  .gif-link:hover::before {
+    outline: 1px dotted var(--font-hover); }
 
 .new-main {
   margin-top: 5%; }
@@ -707,3 +743,385 @@ body {
   margin-right: 32px;
   margin-top: 44px;
   margin-bottom: 28px; }
+
+/* .new-main {
+  margin-top: 5%;
+}
+
+.new-gif {
+  margin: 0 26.3%;
+  padding: 3px;
+  @include bg_shadow(var(--theme-fill), var(--theme-in-shadow), var(--white));
+
+  .new-title {
+    display: block;
+    font-size: 14px;
+    color: var(--white);
+    letter-spacing: 0;
+    font-weight: 600;
+    background-image: var(--gradient);
+
+    padding: 3.4px 0 2.6px 4px;
+    margin-bottom: 17px;
+  }
+}
+
+.new-info {
+  margin-left: 73px;
+  position: relative;
+
+  .list,
+  p {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--font-hover);
+    letter-spacing: 0;
+    line-height: 20px;
+    max-width: 518px;
+  }
+
+  > span:first-child {
+    display: block;
+    font-size: 16px;
+    color: var(--font-hover);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 22px;
+    margin-bottom: 17px;
+    margin-top: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: url(../assets/window.png);
+      background-repeat: no-repeat;
+      position: absolute;
+      left: -50px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.buttons {
+  @include dis_flex($justify: flex-end);
+  margin-right: 2.5%;
+  margin-bottom: 3.4%;
+  margin-top: 28px;
+
+  button {
+    @include buttons(9px, 35px);
+    margin-left: 16px;
+    cursor: pointer;
+  }
+}
+
+.video-container {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: fit-content;
+  height: auto;
+  padding: 3px 4px;
+  position: relative;
+
+  @include bg_shadow(var(--theme-fill), var(--theme-in-shadow), var(--white));
+
+  > .video-title {
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 900;
+    letter-spacing: 0;
+    background-image: var(--gradient);
+    width: 100%;
+    padding: 3px 0;
+    padding-left: 4px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      background: url("../assets/button3.svg") no-repeat;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      right: 13px;
+    }
+  }
+}
+
+.media-master {
+  display: flex;
+}
+
+.media-div {
+  @include bg_bder_shadow(
+    var(--white),
+    var(--search-bder),
+    var(--theme-fill),
+    var(--black),
+    -2px,
+    2px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 13px 0 8px;
+  padding: 2px;
+  width: calc(100% - 21px);
+}
+
+.gif-div {
+  display: none;
+  margin-top: 29px;
+  margin-left: 24px;
+  width: 100%;
+}
+
+.gif-img {
+  width: 365px;
+  height: 192px;
+}
+
+.video-up {
+  width: 960px;
+  height: 540px;
+  position: relative;
+  object-fit: fill;
+}
+
+.upload-container {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 138px 250px;
+
+  > span:nth-of-type(1) {
+    @include buttons($weight: 700, $l-height: 22px);
+    margin-top: 8px;
+    margin-bottom: 39px;
+  }
+
+  > span:nth-of-type(2) {
+    @include buttons(
+      $color: rgba(17, 0, 56, 0.64),
+      $l-height: 14px,
+      $f-size: 12px
+    );
+    margin-top: 8px;
+  }
+
+  span:first-child {
+    text-decoration: line-through;
+  }
+}
+
+.uploaded-buttons {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-right: 46px;
+  width: 100%;
+  margin-left: 24px;
+
+  span {
+    @include buttons($l-height: 22px, $weight: 700);
+    margin-bottom: 16px;
+  }
+}
+
+.copy-url {
+  @include buttons($pad-lr: 56.5px, $pad-tb: 9px);
+}
+
+.download-gif {
+  @include buttons($pad-lr: 68.5px, $pad-tb: 9px);
+  margin-top: 14px;
+}
+
+.master-buttons {
+  width: 100%;
+  margin-top: 21px;
+  margin-bottom: 16px;
+  padding-right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.video-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  cursor: pointer;
+
+  &:hover > span::before,
+  &:hover > button::before {
+    outline: 1px dotted var(--font-hover);
+  }
+
+  &:hover > span,
+  &:hover > button {
+    background-color: var(--btn-fill-hover);
+  }
+
+  > button {
+    @include buttons(9px, 39.5px);
+  }
+
+  > span {
+    background-image: var(--camera);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 18px;
+    height: 16.5px;
+    padding: 18px;
+    position: relative;
+  }
+}
+
+.stop-container {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: flex-end;
+  width: 100%;
+  position: relative;
+}
+
+.stop-timer {
+  @include bg_bder_shadow(
+    var(--white),
+    var(--search-bder),
+    var(--theme-fill),
+    var(--black)
+  );
+  font-size: 16px;
+  color: var(--font-hover);
+  letter-spacing: 0;
+  line-height: 22px;
+  padding: 7px 13px 7px 21px;
+  position: absolute;
+  left: 12px;
+  bottom: 18px;
+}
+
+.stop-btn-div {
+  display: none;
+  cursor: pointer;
+
+  > span {
+    @include bg_bder_shadow(
+      var(--stop-btn-fill),
+      var(--font-hover),
+      var(--stop-btn-in-shadow),
+      var(--white),
+      -1px,
+      1px
+    );
+    background-image: var(--recording);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    padding: 18px;
+  }
+
+  > button {
+    @include bg_bder_shadow(
+      var(--stop-btn-fill),
+      var(--font-hover),
+      var(--stop-btn-in-shadow),
+      var(--white),
+      -1px,
+      1px
+    );
+    @include buttons($color: var(--white));
+    padding: 9px 53px;
+    cursor: pointer;
+  }
+}
+
+.retry-upload {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+
+  > button {
+    @include buttons();
+  }
+
+  .retry {
+    padding: 9px 13px;
+  }
+
+  .upload {
+    padding: 9px 32px;
+    margin-left: 14px;
+  }
+}
+
+.play-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 119px;
+
+  .play {
+    background-image: url("../assets/forward.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    width: 6px;
+    height: 10px;
+    padding: 10px 10px;
+    margin-right: 3px;
+    margin-bottom: 2px;
+  }
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  @include bg_shadow(var(--theme-link-in-shadow), var(--white), var(--black));
+  height: 24px;
+  padding-right: 2px;
+}
+
+.progress,
+.progress-up {
+  display: inline-block;
+  width: 12px;
+  height: 20px;
+  margin-left: 2px;
+  background-color: var(--progress);
+}
+
+.progress-fill {
+  background-color: var(--btn-fill);
+}
+
+.cancel-btn {
+  @include buttons($pad-tb: 9px, $pad-lr: 39.5px);
+  display: none;
+}
+
+.finish-btn {
+  display: none;
+  @include buttons($pad-tb: 9px, $pad-lr: 53.5px);
+  margin-right: 32px;
+  margin-top: 44px;
+  margin-bottom: 28px;
+}
+ */

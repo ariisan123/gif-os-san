@@ -1,4 +1,4 @@
-body {
+.light {
   background-color: var(--background);
 
   --background: #fff4fd;
@@ -61,11 +61,13 @@ body {
 }
 
 .dark {
+  background-color: var(--background);
+
   --background: #110038;
   --logo: url(../assets/gifOF_logo_dark.png);
   --camera: url(../assets/camera_light.svg);
   --lens: url(../assets/lupa_light.svg);
-  --inactive-lens: url(../assets/lupa_inactive.svg);
+  --inactive-lens: url(../assets/lupa_inactive_light.svg);
   --recording: url(../assets/recording_dark.svg);
 
   --dropdown-first: var(--font);

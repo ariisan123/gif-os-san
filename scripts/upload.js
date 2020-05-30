@@ -1,3 +1,7 @@
+/* window.onload = () => {
+  verifyTheme()
+} */
+
 const video = document.querySelector(".video-up");
 const videoDiv = document.querySelector('.video-div');
 const videoTitle = document.querySelector(".video-title");
@@ -54,9 +58,10 @@ let gifId;
 let barAnimation;
 
 start.addEventListener("click", async () => {
-  mediaStream = await navigator.mediaDevices.getUserMedia(mediaOptions);
+  console.log(navigator.mediaDevices.enumerateDevices());
+  mediaStream = await window.navigator.mediaDevices.getUserMedia(mediaOptions)
   video.srcObject = mediaStream;
-  video.play();
+  await video.play();
   document.querySelector(".new-main").style.display = "none";
   document.querySelector(".video-container").style.display = "flex";
   finishContainer.style.display = 'none';
@@ -87,10 +92,12 @@ recordButton.addEventListener("click", () => {
   });
 
   gifRecorder = new GifRecorder(mediaStream, {
-    width: 320,
-    height: 240,
+    //width: 320,
+    //height: 240,
+    width: 1280,
+    height: 720,
     quality: 10,
-    frameRate: 70
+    frameRate: 150
   })
 
   newDate(videoDuration)
@@ -236,6 +243,3 @@ downloadBtn.addEventListener('click', () => {
 })
 
 
-window.onload = () => {
-  verifyTheme()
-}

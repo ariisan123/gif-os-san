@@ -11,20 +11,11 @@ themeMenu.addEventListener("click", () => {
 
 
 darkTheme.addEventListener('click', () => {
-  changeTheme(lightTheme, darkTheme)
-})
+  changeTheme(false, darkTheme, lightTheme);
+  document.querySelector('body').className = 'dark';
+});
 
 lightTheme.addEventListener('click', () => {
-  changeTheme(lightTheme, darkTheme)
-})
-
-window.onload = () => {
-  verifyTheme();
-  if (getLocalStorage('theme') == true) {
-    lightTheme.classList.remove('theme-enabled');
-    darkTheme.classList.add('theme-enabled');
-  } else {
-    darkTheme.classList.remove('theme-enabled');
-    lightTheme.classList.add('theme-enabled');
-  }
-}
+  changeTheme(true, lightTheme, darkTheme)
+  document.querySelector('body').className = 'light';
+});

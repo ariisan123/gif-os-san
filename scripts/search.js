@@ -4,61 +4,65 @@ const searchContainerTitle = document.querySelector(".search-title");
 const gifContainer = document.querySelector(".gif-search-container");
 const searchOption = document.querySelectorAll('.search-option');
 
-searchButton.addEventListener("click", () => {
+function printSearchContainer(value) {
   searchContainerTitle.style.display = "block";
-  searchContainerTitle.innerText = `Resultados de: "${searchInput.value}"`;
+  searchContainerTitle.innerText = `Resultados de: "${value}"`;
   gifContainer.style.visibility = "visible";
-  searchInput.click();
-
   if (gifContainer.querySelectorAll('div').length > 0) {
     gifContainer.querySelectorAll('div').forEach(element => element.remove())
   }
+}
 
-  getData(endpoints.search, searchInput.value)
-    .then(data => {
-      console.log(data);
-      data.forEach((element, index) => {
-        newElement(".gif-search-container", 'div', 'search-gif');
-        newElement('.search-gif', 'img', 'search-img');
-        newElement('.search-gif', 'span', 'search-tags');
-
-        document.querySelectorAll('.search-img')[index].src = element.images.fixed_height.url;
-        document.querySelectorAll('.search-tags')[index].innerText = addHashtag(capitalize(removeGifBy(element.title)));
-      })
+function addTagListeners() {
+  document.querySelectorAll('.gif-search-tag').forEach(element => {
+    element.addEventListener('click', () => {
+      searchGifs(element.innerText);
+      printSearchContainer(element.innerText);
+      searchSuggestions(element.innerText, addTagListeners);
     })
-
-
-  searchInput.value = "";
-});
-
-searchInput.addEventListener("click", () => {
-  document.querySelector(".search-options").classList.toggle("search-options-active");
-});
+  })
+}
 
 searchInput.addEventListener("keyup", () => {
   if (event.keyCode === 13) {
     searchButton.click();
-  }
-
-  if (searchInput.value.length >= 3) {
-    fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=SHG6tML92fdVMBeKXAMm4NhdLs0qCXyS&q=${searchInput.value}`)
-      .then(response => response.json())
+  } else if (searchInput.value.length > 2) {
+    searchButton.disabled = false;
+    getData(endpoints.autoComplete, searchInput.value)
       .then(data => {
-        console.log(data);
-        data.data.forEach((element, index) => {
+        document.querySelector(".search-options").classList.add("search-options-active");
+        data.forEach((element, index) => {
           searchOption[index].innerText = element.name;
         })
       })
+  } else if (event.keyCode === 8 && searchInput.value.length <= 3) {
+    searchButton.disabled = true;
+    document.querySelector(".search-options").classList.remove("search-options-active");
   }
+
 });
+
+
+searchButton.addEventListener("click", () => {
+  printSearchContainer(searchInput.value)
+
+  searchGifs(searchInput.value);
+  searchSuggestions(searchInput.value, addTagListeners);
+
+  document.querySelector(".search-options").classList.remove("search-options-active");
+  searchInput.value = "";
+});
+
+
 
 searchOption.forEach(element => {
   element.addEventListener('click', () => {
-    console.log(element.innerText);
-    searchButton.click()
-    /* searchElement(element.innerText)
-    searchContainerTitle.style.display = "block";
-    searchContainerTitle.innerText = `Resultados de "${searchInput.value}"`;
-    gifContainer.style.visibility = "visible"; */
+    printSearchContainer(element.innerText)
+
+    searchGifs(element.innerText);
+    searchSuggestions(element.innerText, addTagListeners);
+
+    document.querySelector(".search-options").classList.remove("search-options-active");
+    searchInput.value = "";
   })
 })
