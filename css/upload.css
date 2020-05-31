@@ -264,10 +264,6 @@
     bottom: 3px; }
 
 .gif-link {
-  /*  position: absolute;
-  bottom: 19px;
-  left: 11px;
-  text-decoration: none; */
   font-size: 14px;
   color: var(--white);
   letter-spacing: 0;
@@ -295,6 +291,9 @@
             box-shadow: inset -2px -2px 0 0 var(--gif-btn-in-shadow), inset 2px 2px 0 0 var(--white); }
   .gif-link:hover::before {
     outline: 1px dotted var(--font-hover); }
+
+.large-gif {
+  grid-column: span 2; }
 
 .new-main {
   margin-top: 5%; }

@@ -160,3 +160,11 @@ function newDate(array) {
   let date = new Date();
   array.push(date.getTime())
 }
+
+function calculateWidthGif(object, tagClass) {
+  let ascpect = object.width / object.height;
+  if (ascpect.toFixed(2) >= 1.78) {
+    let element = document.querySelectorAll(tagClass);
+    element[element.length - 1].classList.add('large-gif')
+  }
+}
