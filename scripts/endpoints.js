@@ -68,6 +68,9 @@ function searchGifs(searchValue) {
 
         document.querySelectorAll('.search-img')[index].src = element.images.fixed_height.url;
         document.querySelectorAll('.search-tags')[index].innerText = addHashtag(capitalize(removeGifBy(element.title)));
+
+        calculateWidthGif(element.images.fixed_height, '.search-gif');
+
       })
     })
     .catch(err => console.log(err));

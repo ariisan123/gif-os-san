@@ -25,16 +25,20 @@
 .trends-container,
 .gif-search-container,
 .mygif-container {
-  @include dis_flex(space-between, center, row, wrap);
+  //@include dis_flex(space-between, center, row, wrap);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-flow: dense;
 }
 
 .sug-gif {
   @include dis_flex($f_dir: column);
   @include bg_shadow(var(--theme-fill), var(--gif-in-shadow), var(--white));
   height: 313px;
-  width: 24%;
   padding: 3px 4px;
   position: relative;
+  object-fit: fill;
 
   span {
     font-size: 14px;

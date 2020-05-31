@@ -264,10 +264,6 @@
     bottom: 3px; }
 
 .gif-link {
-  /*  position: absolute;
-  bottom: 19px;
-  left: 11px;
-  text-decoration: none; */
   font-size: 14px;
   color: var(--white);
   letter-spacing: 0;
@@ -295,6 +291,9 @@
             box-shadow: inset -2px -2px 0 0 var(--gif-btn-in-shadow), inset 2px 2px 0 0 var(--white); }
   .gif-link:hover::before {
     outline: 1px dotted var(--font-hover); }
+
+.large-gif {
+  grid-column: span 2; }
 
 .h-title {
   background-image: var(--gradient);
@@ -554,21 +553,10 @@
 .trends-container,
 .gif-search-container,
 .mygif-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-auto-flow: dense; }
 
 .sug-gif {
   display: -webkit-box;
@@ -590,9 +578,10 @@
   -webkit-box-shadow: inset -2px -2px 0 0 var(--gif-in-shadow), inset 2px 2px 0 0 var(--white);
           box-shadow: inset -2px -2px 0 0 var(--gif-in-shadow), inset 2px 2px 0 0 var(--white);
   height: 313px;
-  width: 24%;
   padding: 3px 4px;
-  position: relative; }
+  position: relative;
+  -o-object-fit: fill;
+     object-fit: fill; }
   .sug-gif span {
     font-size: 14px;
     font-weight: bold;

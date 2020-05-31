@@ -157,11 +157,6 @@
 }
 
 .gif-link {
-  /*  position: absolute;
-  bottom: 19px;
-  left: 11px;
-  text-decoration: none; */
-
   font-size: 14px;
   color: var(--white);
   letter-spacing: 0;
@@ -202,4 +197,8 @@
   &:hover::before {
     outline: 1px dotted var(--font-hover);
   }
+}
+
+.large-gif {
+  grid-column: span 2;
 }
