@@ -16,7 +16,7 @@ async function uploadGif(endpoint, gif, cancelBar, cancelID) {
     const resolve = await upload.json();
     let data = await resolve;
     data = data.data;
-    console.log(data);
+    //console.log(data);
     return data;
   } catch (err) {
     if (err.name == 'AbortError') {
@@ -26,7 +26,7 @@ async function uploadGif(endpoint, gif, cancelBar, cancelID) {
         element.classList.remove('progress-fill')
       })
     } else {
-      console.log(err);
+      //console.log(err);
     }
   }
 }
@@ -37,11 +37,11 @@ async function getData(endpoint, string = null) {
       let search = await fetch(endpoint + string);
       let data = await search.json();
       data = data.data;
-      console.log(data);
+      //console.log(data);
       return data
 
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
 
   } else {
@@ -49,11 +49,11 @@ async function getData(endpoint, string = null) {
       let search = await fetch(endpoint);
       let data = await search.json();
       data = data.data;
-      console.log(data);
+      //console.log(data);
       return data
 
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   }
 }
