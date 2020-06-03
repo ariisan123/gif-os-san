@@ -82,7 +82,7 @@ function getStorageGifs(key) {
   let gifs = []
   if (getLocalStorage(key)) {
     gifs = getLocalStorage(key);
-    console.log(gifs);
+    //console.log(gifs);
     return gifs;
   } else {
     return gifs
@@ -101,11 +101,11 @@ function setStorageGif(array, object) {
 function verifyTheme() {
   if (getLocalStorage('theme') == true) {
     document.querySelector('body').className = 'dark';
-    console.log('tema oscuro');
+    //console.log('tema oscuro');
     return true
   } else {
     setLocalStorage('theme', false)
-    console.log('tema claro');
+    //console.log('tema claro');
     document.querySelector('body').className = 'light';
     return false
   }
@@ -118,7 +118,6 @@ function changeTheme(bool, newTheme, oldTheme) {
     setLocalStorage('theme', !bool)
   }
 }
-
 
 function twoDigits(number) {
   if (number < 10) {

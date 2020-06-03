@@ -487,7 +487,8 @@
     line-height: 22px;
     padding: 0 0;
     margin-top: 8px;
-    margin-bottom: 39px; }
+    margin-bottom: 39px;
+    color: var(--font-hover); }
   .upload-container > span:nth-of-type(2) {
     font-size: 12px;
     font-weight: 500;

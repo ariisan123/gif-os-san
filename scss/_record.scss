@@ -162,6 +162,7 @@
     @include buttons($weight: 700, $l-height: 22px);
     margin-top: 8px;
     margin-bottom: 39px;
+    color: var(--font-hover);
   }
 
   > span:nth-of-type(2) {

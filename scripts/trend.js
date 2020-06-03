@@ -1,6 +1,6 @@
 getData(endpoints.trending)
   .then(data => {
-    console.log(data);
+    //console.log(data);
 
     data.forEach((element, index) => {
       newElement('.trends-container', 'div', 'trend-gif');
