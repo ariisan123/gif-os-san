@@ -8,6 +8,7 @@ function printSearchContainer(value) {
   searchContainerTitle.style.display = "block";
   searchContainerTitle.innerText = `Resultados de: "${value}"`;
   gifContainer.style.visibility = "visible";
+  searchButton.disabled = true;
   if (gifContainer.querySelectorAll('div').length > 0) {
     gifContainer.querySelectorAll('div').forEach(element => element.remove())
   }

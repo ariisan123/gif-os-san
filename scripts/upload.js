@@ -245,6 +245,7 @@ downloadBtn.addEventListener('click', () => {
 })
 
 finishBtn.addEventListener('click', () => {
+
   window.location.href = '../myguifos.html'
 })
 

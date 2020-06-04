@@ -1,6 +1,7 @@
 .primary-btn {
   position: relative;
   cursor: pointer;
+  text-decoration: none;
   @include bg_bder_shadow(
     var(--btn-fill),
     var(--font-hover),
@@ -34,6 +35,7 @@
 .secondary-btn {
   position: relative;
   cursor: pointer;
+  text-decoration: none;
   @include bg_bder_shadow(
     var(--secondary-btn-fill),
     var(--font-hover),
